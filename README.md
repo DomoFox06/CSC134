@@ -5,3 +5,6 @@ C++ CSC 134 Student facing example
 User: Fox
 Passphrase: [REDACTED]
 Answer: Vulpix\Alolan Vulpix
+
+
+#Collaberator
