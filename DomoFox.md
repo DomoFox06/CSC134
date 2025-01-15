@@ -4,7 +4,7 @@
 I am a first-year student currently pursuing an Associate of Science degree in Computer Science. My goal is to transfer to a four-year college to complete my Bachelor's degree in Computer Science. I have a strong interest in C++ programming and am eager to expand my knowledge and skills in this field.
 
 ## Education
-- **Current:** Associate of Science in Computer Science, [Your Community College], Expected Graduation: [Month, Year]
+- **Current:** Associate of Science in Computer Science, Fayettville Technichal Community College, Expected Graduation: May, 2027
 - **Future Goal:** Bachelor of Science in Computer Science, Fayettville State University
 
 ## Skills
