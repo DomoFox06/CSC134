@@ -14,5 +14,5 @@ int apples = 100
 // price per apple
 double pricePerApple = 0.25
 
-cout << “Welcome to “ << name;
-cout << “ ’s apple orchard.” << endl;
+cout << “Welcome to Fox “ << name;
+cout << “ Fox’s apple orchard.” << endl;

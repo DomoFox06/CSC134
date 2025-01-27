@@ -9,6 +9,7 @@ using namespace std;
 int main()
 {
     cout << "Hey";
-    cout << endl;
+    cout<< "This  is Fox using GitHub" << endl;
+    cout<< "I am learning one step at a time" << endl;
     return 0;
 }
