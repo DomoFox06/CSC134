@@ -9,6 +9,6 @@ using namespace std;
 int main()
 {
     cout << "Hey";
-    cout << end1;
+    cout << endl;
     return 0;
 }
