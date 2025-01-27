@@ -1,6 +1,6 @@
 // CSC 134
 // M1T1 - Hey
-// Fox
+// Fox Yarnall
 // 1/27/2025
 
 #include <iostream>
