@@ -31,6 +31,15 @@ cout << "They cost $" << cost_each << "each." << endl;
 double total_cost = num_apples * cost_each;
 cout << "The price for all of them is: $" << total_cost << endl;
 
+//Making a deal
+cout << "How many appples would you like?";
+cin >> apples_to_buy;
+
+total_cost = apples_to_buy * cost_each;
+
+cout << "Thank you!" << apples_to_buy << "apples come to $" << total_cost << endl;
+cout << "Have a nice day!" << endl;
+
 cout << endl;
 return 0;
 }
