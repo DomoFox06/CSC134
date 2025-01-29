@@ -15,9 +15,9 @@ string name = "UP";
     cout << worldWideBoxOffice << "million dollars";
 
     // Movie Quotes
-    cout << "Squirrel!" << endl;
-    cout << "I found sand!" << endl;
-    cout << "Adventure is out there!" << endl;
+    cout << "Dug said, \"Squirrel!\" and looked off in the distance" << endl;
+    cout << " Russell said, \"I found sand!\" and picked some up" << endl;
+    cout << "Ellie said, \"Adventure is out there!\" loudly from in the house" << endl;
 
 
 }
