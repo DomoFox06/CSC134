@@ -7,7 +7,7 @@ using namespace std;
 int main() {
 
 
-string name = "Disney Pixar";
+string name = "UP";
 
     int yearItCameOut = 2009;
 
