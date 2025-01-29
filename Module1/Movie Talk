@@ -11,7 +11,8 @@ string name = "Disney";
 
     int yearItCameOut = 2009;
 
-    double worldWideBoxOffice = 731,463,377;
+    double worldWideBoxOffice = 731.5;
+    cout << worldWideBoxOffice << "million dollars";
 
     // Movie Quotes
     cout << "Squirrel!" << endl;
