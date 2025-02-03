@@ -26,9 +26,9 @@ cout << "           " << endl;
 cout << "YOUR RECIEPT" << endl;
 cout << "------------" << endl;
 cout << "Subtotal: $" << food_price << endl;
-cout << "Tax: $" << subtotal << endl;
+cout << "Tax:      $" << subtotal << endl;
 cout << "------------" << endl;
-cout << "Total: $" << total << endl;
+cout << "Total:    $" << total << endl;
 cout << "           " << endl;
 cout << "Have a nice day!" << endl;
 
