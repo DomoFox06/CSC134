@@ -5,7 +5,7 @@
 
 #include <iostream>
 using namespace std;
-
+// getting volume and dimentions
 int main() {
     cout << "Crate Calculation Program" << endl;
 int length, width, hieght;
@@ -22,11 +22,21 @@ cin >> hieght;
 
 volume = length * width * hieght;
 
-cout << "A crate " << length << "by " << width << "by " << hieght << endl;
+cout << "A crate " << length << " by " << width << " by " << hieght << endl;
 cout << "Is volume " << volume << endl;
 
+// getting cost
+const double COST_PER = 0.23;
+const double CHARGE_PER = 0.50;
+double cost, charge, profit;
 
+cost = volume * 0.23;
+charge = CHARGE_PER * volume;
+profit = charge - cost;
 
+cout << "It costs: $" << cost << " to make." << endl;
+cout << "Sells for: $" << charge << endl;
+cout << "Profit is: $" << profit << endl;
 
 
     return 0;
