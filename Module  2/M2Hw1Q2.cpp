@@ -2,7 +2,7 @@
 // CSC 134
 // Domonic Yarnall
 // 2/10/2025
-
+//Gold
 #include <iostream>
 #include <iomanip>
 using namespace std;
