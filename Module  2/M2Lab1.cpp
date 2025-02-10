@@ -4,6 +4,7 @@
 // 2/10/2025
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
 // getting volume and dimentions
 int main() {
@@ -34,6 +35,7 @@ cost = volume * 0.23;
 charge = CHARGE_PER * volume;
 profit = charge - cost;
 
+cout << setprecision (2) << fixed << showpoint << endl;
 cout << "It costs: $" << cost << " to make." << endl;
 cout << "Sells for: $" << charge << endl;
 cout << "Profit is: $" << profit << endl;
