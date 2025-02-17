@@ -19,8 +19,8 @@ int main() {
     cin >> wid1;
     cout << "What's the length of the second side?" << endl;
     cin >> len2;
-    cout << "What's the width of the first side?" << endl;
-    cin >> len2;
+    cout << "What's the width of the second side?" << endl;
+    cin >> wid2;
 
     // Find area
     area1 = len1 * wid1;

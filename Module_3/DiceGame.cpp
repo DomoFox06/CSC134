@@ -14,8 +14,10 @@ p2 = 0;
 
 cout << "Player 1: " << p1 << endl;
 cout << "Player 2: " << p2 << endl;
-
+cout << endl;
+cout << "Enter Player 1 Roll" << endl;
 cin >> p1;
+cout << "Enter Player 2 Roll" << endl;
 cin >> p2;
 
 cout << "Player 1: " << p1++ << endl;
@@ -36,7 +38,7 @@ else if (p1 < 100){
 if (p2 > 100){
     cout << "Congradulations Player 2!" ;
 }
-else if (p1 < 100){
+else if (p2 < 100){
     cout << "Try Again";
 }
 
