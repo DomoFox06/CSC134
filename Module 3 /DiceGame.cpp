@@ -1,7 +1,7 @@
 // CSC 134
-// M1LAB
+// Dice Game
 // Fox Yarnall
-// 1/29/2025
+// 2/17/2025
 
 #include <iostream>
 using namespace std;
@@ -27,16 +27,16 @@ cin >> p2;
 cout << "Player 1: " << p1++ << endl;
 cout << "Player 2: " << p2++ << endl;
 
-if (p1 > 300){
+if (p1 > 100){
     cout << "Congradulations Player 1!" ;
 }
-else if (p1 < 300){
+else if (p1 < 100){
     cout << "Try Again";
 }
-if (p2 > 300){
+if (p2 > 100){
     cout << "Congradulations Player 2!" ;
 }
-else if (p1 < 300){
+else if (p1 < 100){
     cout << "Try Again";
 }
 
