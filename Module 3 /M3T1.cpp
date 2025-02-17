@@ -1,5 +1,5 @@
 // CSC 134
-// M3T1
+// M3T1 and M3T2
 // Fox Yarnall
 // 2/17/2025
 
@@ -28,8 +28,19 @@ int main() {
     // Print the area
     cout << "Area of the first rectangle: " << area1 << endl;
     cout << "Area of the second rectangle: " << area2 << endl;
-    
-//Done!
+
+
+    // Which is larger?
+    if (area1 > area2){
+        cout << "The first one is larger." << endl;
+    }
+    else if (area2 > area1){
+        cout << "The second one is larger." << endl;
+    }
+    else if ( area1 = area2){
+        cout << "They are the same size." << endl;
+    }
+    //Done!
 
     return 0;
 }
