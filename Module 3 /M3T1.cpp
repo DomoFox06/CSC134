@@ -28,6 +28,7 @@ int main() {
     // Print the area
     cout << "Area of the first rectangle: " << area1 << endl;
     cout << "Area of the second rectangle: " << area2 << endl;
+    
 //Done!
 
     return 0;
