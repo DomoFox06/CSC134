@@ -4,6 +4,7 @@
 // 2/17/2025
 
 #include <iostream>
+#include <cstdlib>
 using namespace std;
 int main() {
 
@@ -27,6 +28,21 @@ p2total += p2;
 cout << "Player 1: " << p1total << endl;
 cout << "Player 2: " << p2total << endl;
 
+if (p1total > 50){
+    cout << "Congradulations Player 1!" ;
+    return 0;
+}
+else if (p1total < 50){
+    cout << "Try Again" << endl;
+}
+else if (p2total > 50){
+    cout << "Congradulations Player 2!" ;
+    return 0;
+}
+else if (p2total < 50){
+    cout << "Try Again" << endl;
+}
+
 cout << "Enter Player 1 Roll" << endl;
 cin >> p1;
 cout << "Enter Player 2 Roll" << endl;
@@ -35,20 +51,21 @@ cin >> p2;
 p1total += p1;
 p2total += p2;
 
+
 cout << "Player 1: " << p1total << endl;
 cout << "Player 2: " << p2total << endl;
 
-if (p1total > 100){
+if (p1total > 50){
     cout << "Congradulations Player 1!" ;
 }
-else if (p1total < 100){
-    cout << "Try Again";
+else if (p1total < 50){
+    cout << "Try Again" << endl;
 }
-else if (p2total > 100){
+else if (p2total > 50){
     cout << "Congradulations Player 2!" ;
 }
-else if (p2total < 100){
-    cout << "Try Again";
+else if (p2total < 50){
+    cout << "Try Again" << endl;
 }
 
 return 0;
