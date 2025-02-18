@@ -8,12 +8,15 @@
 using namespace std;
 int main() {
 
-int p1, p2, p1total, p2total;
+int p1, p2, p1total, p2total, players;
 
 p1total = 0;
 p2total = 0;
-while (p1total < 50){
-while (p2total < 50){
+
+players = p1total;
+players = p2total;
+
+while (players > 50 ){
 cout << "Player 1: " << p1total << endl;
 cout << "Player 2: " << p2total << endl;
 cout << endl;
@@ -28,7 +31,7 @@ p2total += p2;
 
 cout << endl;
     }
-}
+
 
 if (p1total > 50){
     cout << "Congradulations Player 1!" ;
