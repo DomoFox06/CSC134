@@ -14,8 +14,8 @@ p1total = 0;
 p2total = 0;
 
 
-for (p1total < 50){
-for (p2total < 50){
+
+while (p2total < 50 && p1total < 50){
 cout << "Player 1: " << p1total << endl;
 cout << "Player 2: " << p2total << endl;
 cout << endl;
@@ -29,7 +29,7 @@ p1total += p1;
 p2total += p2;
 
 cout << endl;
-    }
+    
 }
 
 if (p1total > 50){
