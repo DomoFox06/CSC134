@@ -40,19 +40,19 @@ int main() {
     // 7 and 11 - win!
     // 2 and 12 - lose.
     // anything else -- comes later.
-    if (total == 7) {
+    if (total == LUCKY_SEVEN) {
         cout << "Lucky seven! You win!" << endl;
     }
-    else if (total == 11) {
+    else if (total == LUCKY_ELEVEN) {
         cout << "Eleven is a winner!" << endl;
     }
-    else if (total == 2) {
+    else if (total == SNAKE_EYES) {
         cout << "Snake eyes! Too bad, you lose." << endl;
     }
-    else if (total == 3) {
+    else if (total == THREE_LOSE) {
         cout << "Sorry, three is unlucky, you lose." << endl;
     }
-    else if (total == 12) {
+    else if (total == BOX_CARS) {
         cout << "Boxcars! Sorry, you lost." << endl;
     }
     else {
