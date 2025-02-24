@@ -1,5 +1,5 @@
 // CSC 134
-// Dice Game
+// M3Lab1
 // Fox Yarnall
 // 2/24/2025
 
