@@ -69,6 +69,7 @@ int main(){
   }
   else {
   	cout << "I'm sorry, that is not a valid choice." << endl;
+
   }
 
   // finish up
