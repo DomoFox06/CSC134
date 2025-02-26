@@ -14,7 +14,9 @@ double food_price;
 string store_name = "Sandy Wich";
 string food_item = "Sandwhich";
 string dining;
-double tax_cost = 0.08;
+string yes = "yes";
+string no = "no";
+double tax_cost = 0.15;
 // Doing the order
 cout << "Welcome to the " << store_name << endl;
 cout << "You have a " << food_item << endl;
@@ -27,6 +29,9 @@ cout << "Will you be dining in with us today?" << endl;
 cout << "Enter yes or no" << endl;
 cin >> dining;
 
+if (dining == no){
+tax_cost = 0;
+}
 // Figure out subtotal and total
 double subtotal = food_price * tax_cost;
 double total = subtotal + food_price;
