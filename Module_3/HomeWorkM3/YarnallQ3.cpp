@@ -15,7 +15,9 @@ string choice;
 string C = "C";
 string L = "L";
 
-cout << "You're in the jungle and have reached the tomb which holds the crystal that will make you immortal and cure the deadly snake bite you have on your ankle." << endl;
+cout << "You're in the jungle and have reached the tomb which holds the crystal that will" << endl;
+cout << "make you immortal and cure the deadly snake bite you have on your ankle." << endl;
+cout << endl;
 cout << "You have 5 minutes before the poison kills you. What do you do? " << endl;
 cout << "Open the tomb and use the crystal, or cut off your leg?" << endl;
 cout << "(type C to get the crystal or L to cut off your leg)" << endl;
@@ -24,7 +26,7 @@ cout << "You chose " << choice << endl;
 
 
 if (choice == C){
-    cout << "It was a trap! You fell in a pit full of snakes" << endl;
+    cout << "It was a trap! You fell in a pit full of snakes!" << endl;
     cout << "You died a painful death" << endl;
     cout << endl;
     cout << "Game Over!" << endl;
@@ -38,6 +40,7 @@ else if (choice == L){
     cout << endl;
     cout << "Will you use a tourniquet or a fire?" << endl;
     cin >> fd;
+    cout << "You chose: " << fd << endl;
     if (fd == F) {
         cout << "You could not find any fire." << endl;
         cout << "You died a slow death" << endl;
