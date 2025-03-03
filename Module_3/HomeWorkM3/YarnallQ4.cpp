@@ -18,7 +18,7 @@ int main() {
     // Seed the RNG
     srand(seed);
 
-    const int MAX = 100000; // numbers from 1-6
+    const int MAX = 9; // numbers from 1-6
     int num1, num2, total;
     num1  = (rand() % MAX) + 1; // Divide by MAX, and just keep the remainder
     
