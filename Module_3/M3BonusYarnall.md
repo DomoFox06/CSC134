@@ -79,6 +79,7 @@ Try this out, and feel free to tweak it or add features, like keeping score or a
 
 that's a lot!
 I asked: adding loops to catch bad input
+
 Copilot said: Great idea! Adding input validation with loops ensures the game handles unexpected or incorrect inputs gracefully. Here's how you can incorporate loops to catch bad input, like when a user enters something other than a valid option (e.g., yes/no or play/exit):
 
 For example, let’s add an option at the start of the game where the player is asked if they want to play. The game will keep prompting the player until they provide valid input:
@@ -164,7 +165,9 @@ int main() {
    - If the user types "no," the program exits without starting the game.
 
 This structure ensures a more user-friendly experience. You can expand this approach wherever user input is required in the game! Let me know if you'd like help tweaking it further. 🚀
+
 I asked: can you give me the program in that on how to make the loop
+
 Copilot said: Certainly! Here's a snippet that demonstrates how to implement a loop for handling user input validation in your game. This example focuses on ensuring the player provides valid responses when asked if they want to play the game:
 
 ```cpp
