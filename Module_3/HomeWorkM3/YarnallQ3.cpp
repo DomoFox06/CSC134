@@ -9,8 +9,8 @@ using namespace std;
 int main() {
 
 string fd;
-string F = "yes";
-string T = "no";
+string F = "Fire";
+string T = "tourniquet";
 string choice;
 string C = "Opened the tomb";
 string L = "Lost your leg";
@@ -38,11 +38,15 @@ else if (choice == L){
     cout << endl;
     cout << "Will you use a tourniquet or a fire?" << endl;
     cin >> fd;
-    if (fd == yes) {
-        cout << "Awesome! That's great!" << endl;
+    if (fd == F) {
+        cout << "You could not find any fire." << endl;
+        cout << "You died a slow death" << endl;
+        cout << "Game Over!" << endl;
+        return 0;
     }
-    else if (fd == no){
-        cout << "Aw, okay. If you change your mind, you know where to find me!" << endl;
+    else if (fd == T){
+        cout << "You did it! You are alive and help is on the way!" << endl;
+        cout << "Victory is yours!" << endl;
     }
     else {
         cout << "I am afraid I do not know what that means" << endl;
