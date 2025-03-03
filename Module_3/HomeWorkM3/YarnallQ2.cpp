@@ -41,7 +41,7 @@ cout << "Awesome! Here is your reciept!" << endl;
 // Figure out subtotal and total
 double subtotal = food_price * tax_cost;
 totalTip = tip * food_price;
-double total = subtotal + food_price + tip;
+double total = subtotal + food_price + totalTip;
 cout << fixed << setprecision (2);
 
 cout << "           " << endl;
