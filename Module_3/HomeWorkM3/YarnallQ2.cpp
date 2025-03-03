@@ -1,6 +1,6 @@
 // CSC 134
 // Domonic Yarnall
-//HWM3Q2
+//HWM3Q2-Gold
 // 2/26/2025
 
 #include <iostream>
