@@ -38,11 +38,12 @@ else if (4 == choice){
     question4();
 }
 else if(0 == choice){
-    return 0;
+    cout << "Bye bye! Have a good day!" << endl;
+    keep_going = false;
 }
 else{
     cout << "Not valid choice" << endl;
-}
+    }
 
 }
 
