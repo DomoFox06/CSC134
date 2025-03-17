@@ -51,6 +51,27 @@ for (int h=0; h<H; h++){
     }
     cout << endl;
 }
-
+// just for fun extra user validation
+int width, hight;
+bool good_input = false;
+do{
+    cout << "Enter Hight: ";
+    cin >> hight;
+    cout << "Enter Width: ";
+    cin >> width;
+    if(width > 0 && hight > 0){
+        good_input = true;
+    }
+    else{
+        cout << "Please enter nonzero width nd hight" << endl;
+    }
+}while(good_input == false);
+cout << "Printing a box " << width << " by " << hight << endl;
+for (int h=0; h<hight; h++){
+    for(int w=0; w<width; w++){
+        cout << pixel;
+    }
+    cout << endl;
+}
     return 0;
 }
