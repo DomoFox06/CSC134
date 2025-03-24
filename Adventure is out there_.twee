@@ -1,0 +1,135 @@
+:: StoryTitle
+Adventure is out there!
+
+
+:: StoryData
+{
+  "ifid": "FF2161D4-7243-48F3-B878-B9BE7C528A2B",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Game start",
+  "zoom": 1
+}
+
+
+:: Game start {"position":"400,25","size":"100,100"}
+Welcome to this fun game!
+[[Play]]
+
+
+:: Go {"position":"550,950","size":"100,100"}
+The water is gushing in. The current tries to pull you away, but you grab onto the cage.  The room is filling with water. You can't breathe. You didn't make it out alive.
+Game over!
+
+
+:: MRock {"position":"150,800","size":"100,100"}
+You break the lock, but the door is so rusty that it won't move open. It gets worse. There is a storm outside and if you don't leave now  you'll be flooded!
+What do you do?
+[[Stay]]
+[[Go]]
+
+
+:: MStick {"position":"300,800","size":"100,100"}
+You reach the key, but the key falls and slides further than you can reach. It gets worse. There is a storm outside and if you don't leave now  you'll be flooded!
+What do you do?
+[[Stay]]
+[[Go]]
+
+
+:: Mom {"position":"350,325","size":"100,100"}
+You chose Mom! Excellent choice!
+You are ready to begin your adventure!
+(set: $class to "mom")
+[[Start]]
+
+
+:: Play {"position":"425,175","size":"100,100"}
+Time to choose your charecter. Who do you want to be?
+Charectures are:
+[[Mom]]
+[[Tua]]
+[[Wem]]
+[[Thuj]]
+
+
+:: Rock {"position":"975,725","size":"100,100"}
+Oh no, you're weak and could not lift the rock. It gets worse. There is a storm outside and if you don't leave now  you'll be flooded!
+What do you do?
+[[Stay]]
+[[Go]]
+
+
+:: Start {"position":"425,500","size":"100,100"}
+You're map has led you to the dungeon of an abandoned castle. Rumers are that a cursed spirt dwells here. You are after a key that will unlock the dungeon doors, which people have led you to beilieve that in one of the dungeon cages, a tunnle has been  carved out. The tunnle is supposed to lead you to anouther land, which can easily be profited on.
+You see something shiney inside one of the locked cages. It is the key you need in the hands of long dead human remains. Not only is it holding the key to open the cage to the tunnle, but also to the cage it is inside.
+(if:$class is "Wem")[
+As Wem...
+[[special wem option]]
+]
+
+(if:$class is "mom")[As Mom...
+[[mom option]]
+]
+(if:$class is "tua")[As Tua...
+[[tua option]]
+]
+(if:$class is "thuj")[As Thuj...
+[[thuj option]]
+]
+
+
+:: Stay {"position":"425,950","size":"100,100"}
+The water is gushing in. The current tries to pull you away, but you grab onto the cage. The key! The water is pushing it away too! The room is filling with water. You can't breathe. You didn't make it out alive.
+Game over!
+
+
+:: Stick {"position":"800,725","size":"100,100"}
+Oh no, the stick is'nt long enough. It gets worse. There is a storm outside and if you don't leave now  you'll be flooded!
+What do you do?
+[[Stay]]
+[[Go]]
+
+
+:: Thuj {"position":"600,325","size":"100,100"}
+You chose Thuj! Excellent choice!
+You are ready to begin your adventure!
+(set: $class to "thuj")
+[[Start]]
+
+
+:: Tua {"position":"475,325","size":"100,100"}
+You chose Tua! Excellent choice!
+You are ready to begin your adventure!
+(set: $class to "tua")
+[[Start]]
+
+
+:: Wem {"position":"225,325","size":"100,100"}
+You chose Wem! Excellent choice!
+You are ready to begin your adventure!
+(set: $Class to "Wem")
+[[Start]]
+
+
+:: mom option {"position":"300,625","size":"100,100"}
+What do you do? Reach for it with a stick, or bang on the cage with a rock?
+[[MStick]]
+[[MRock]]
+
+
+:: special wem option {"position":"950,575","size":"100,100"}
+ What do you do? Reach for it with a stick, or bang on the cage with a rock?
+[[Stick]]
+[[Rock]]
+
+
+:: thuj option {"position":"700,575","size":"100,100"}
+What do you do? Reach for it with a stick, or bang on the cage with a rock?
+[[Stick]]
+[[Rock]]
+
+
+:: tua option {"position":"100,625","size":"100,100"}
+What do you do? Reach for it with a stick, or bang on the cage with a rock?
+[[MStick]]
+[[MRock]]
