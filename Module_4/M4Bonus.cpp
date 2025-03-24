@@ -1,5 +1,6 @@
 /*Domonic Yarnall
 M4HW
+Gold
 3/24/25*/
 
 #include <iostream>
@@ -18,7 +19,7 @@ while (true == keep_going){
     cout << "1. Question 1" << endl;
     cout << "2. Question 2" << endl;
     cout << "3. Question 3" << endl;
-    cout << "4. Question 4" << endl;
+   
     cout << "0. Exit" << endl;
 
     cin >> choice;
@@ -53,7 +54,7 @@ else{
 }
 void question1() {
     int age = 25;
-    cout << "Question 1 goes here" << endl;
+    cout << "Question 1" << endl;
     int count =0;
     int eq;
     while ( count < 12 ){
@@ -65,7 +66,7 @@ void question1() {
 
 void question2() {
     int age = 30;
-    cout << "Question 2 goes here" << endl;
+    cout << "Question 2" << endl;
  int count =1;
     int eq;
     int input;
@@ -83,8 +84,22 @@ void question2() {
 void question3(){
     int age = 30;
     cout << "Question 3 goes here" << endl;
-}
-void question4() {
-    int age = 30;
-    cout << "Question 4 goes here" << endl;
-}
+    int count =1;
+    int eq;
+    int input;
+    cout << "Enter a number from 1 to 12? ";
+    cin >> input;
+    while (0 >= input || input > 12){
+        cout << "Enter a number from 1 to 12? ";
+        cin >> input;
+    }
+    
+    cout << endl;
+    while ( count <= 12 ){
+       
+       
+    eq = input * count;
+    cout << input << " times " << count << " is " << eq << endl;
+    count++;
+        }
+ 
