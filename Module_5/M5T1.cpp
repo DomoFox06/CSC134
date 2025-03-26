@@ -11,6 +11,7 @@ using namespace std;
 
 void show_message();
 void greet_user(string name);
+int double_a_number(int number);
 
 int main(){
 
@@ -19,7 +20,11 @@ show_message();
 string user = "Bob";
 greet_user(user);
 
-
+int num;
+cout << "Enter an intager: ";
+cin >> num;
+int answer = double_a_number(num);
+cout << endl << "Double that is: " << answer << endl;
 
     return 0;
 }
@@ -29,4 +34,8 @@ void show_message(){
 }
 void greet_user(string name){
     cout << "Hello, " << name << endl;
+}
+int double_a_number(int number){
+    int answer = number * 2;
+    return answer;
 }
