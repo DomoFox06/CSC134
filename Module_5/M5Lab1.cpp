@@ -69,6 +69,7 @@ void choice_front_door() {
   cout << "1. Check around back" << endl;
   cout << "2. Give up and go home" << endl;
   cout << "4. [Quit]" << endl;
+  cout << "Choose: ";
   int choice;
   cout << "Choose: ";
   cin >> choice;
@@ -95,6 +96,7 @@ cout << endl;
   cout << "1. Go through the window" << endl;
   cout << "2. Give up and go home" << endl;
   cout << "4. [Quit]" << endl;
+  cout << "Choose: ";
   int choice;
   cin >> choice;
   if (1 == choice){
@@ -126,6 +128,7 @@ cout << "What do you do? Go in further, or stay put?" << endl;
 cout << "1. Go further" << endl;
 cout << "2. Stay put" << endl; 
 cout << "4. [Quit]" << endl;
+cout << "Choose: ";
 int choice;
   cin >> choice;
   if (1 == choice){
@@ -151,6 +154,7 @@ cout << "Do you go up to the second floor, or down to the basment?" << endl;
 cout << "1. Go upstairs" << endl;
 cout << "2. Go downstairs" << endl;
 cout << "4. [Quit]" << endl;
+cout << "Choose: ";
 int choice;
 cin >> choice;
 if (1 == choice){
@@ -172,10 +176,11 @@ else {
 void choice_stayPut(){
   cout << endl;
   cout << "While you are staying put you see a light coming close to you." << endl;
-  cout << "Do you run away and go further, or continue staying put?" << end;
+  cout << "Do you run away and go further, or continue staying put?" << endl;
   cout << "1. Go further" << endl;
   cout << "2. Stay put" << endl;
   cout << "4. [Quit]" << endl;
+  cout << "Choose: ";
   int choice;
   cin >> choice;
   if (1 == choice){
@@ -201,6 +206,7 @@ void choice_Go_upstairs(){
   cout << "1. Go to the light" << endl;
   cout << "2. Run away" << endl;
   cout << "4. [Quit]" << endl;
+  cout << "Choose: ";
   int choice;
   cin >> choice;
   if (1 == choice || 2 == choice){
@@ -223,6 +229,7 @@ void choice_Go_downstairs(){
   cout << "1. White light" << endl;
   cout << "2. Yellow light" << endl;
   cout << "4. [Quit]" << endl;
+  cout << "Choose: ";
   int choice;
   cin >> choice;
   if (1 == choice){
