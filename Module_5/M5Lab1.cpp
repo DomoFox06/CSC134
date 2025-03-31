@@ -169,6 +169,31 @@ else {
   choice_GoFurther();  // try again
 }
 }
+void choice_stayPut(){
+  cout << endl;
+  cout << "While you are staying put you see a light coming close to you." << endl;
+  cout << "Do you run away and go further, or continue staying put?" << end;
+  cout << "1. Go further" << endl;
+  cout << "2. Stay put" << endl;
+  cout << "4. [Quit]" << endl;
+  int choice;
+  cin >> choice;
+  if (1 == choice){
+    choice_GoFurther();
+  }
+  else if (2 == choice){
+    death();
+  }
+  else if (4 == choice){
+    cout << "Ok, quitting game" << endl;
+    return;
+  }
+  else {
+    cout << "That's not a valid choice, please try again." << endl;
+    cin.ignore(); // clear the user input
+    choice_stayPut();  // try again
+  }
+}
 void choice_Go_upstairs(){
   cout << endl;
   cout << "You are walking up the stairs, but a you see a mysterious light ahead." << endl;
