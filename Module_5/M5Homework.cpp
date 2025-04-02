@@ -92,7 +92,24 @@ void question2() {
 }
 void question3(){
     int age = 30;
-    cout << "Question 3 goes here" << endl;
+    int num;
+    while (num > 10 || num < 1){
+        string roman = "The Roman numeral version of ";
+    cout << "Enter a number (1-10): " << endl;
+    cin >> num;
+    if (num == 1){cout << roman << num << " is I";}
+    if (num == 2){cout << roman << num <<" is II";}
+    if (num == 3){cout << roman << num <<" is III";}
+    if (num == 4){cout << roman <<num <<" is IV";}
+    if (num == 5){cout << roman <<num << " is V";}
+    if (num == 6){cout <<roman <<num << " is VI";}
+    if (num == 7){cout << roman <<num <<" is VII";}
+    if (num == 8){cout << roman <<num <<" is VII";}
+    if (num == 9){cout << roman <<num <<" is IX";}
+    if (num == 10){cout <<roman <<num << " is X";}
+    
+    
+    }
 }
 void question4() {
     int age = 30;
