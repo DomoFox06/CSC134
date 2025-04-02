@@ -17,6 +17,7 @@ int main(){
 
 double height, width, length, area;
 
+
 cout << "Getting the area of a 3D rectangle" << endl << endl;
 
 width = getWidth();
