@@ -7,7 +7,7 @@
 
 
 #include <iostream>
-
+#include <iomanip>
 
 using namespace std;
 int main(){
@@ -57,36 +57,32 @@ else{
 }
 void question1() {
     int age = 25;
-    cout << "Calculating average rain fall over a span of three months" << endl;
+    cout << "Calculating average rain fall over a span of three months" << endl << endl;
     string month1, month2, month3;
     double rain1, rain2, rain3, rainTotal;
     string month = "Enter month: ";
     string rain = "Enter rainfall for ";
 
-    string month;
+    cout << month;
     cin >> month1;
-    cout << endl;
-    string rain, month1;
+    cout << rain << month1 << " ";
     cin >> rain1;
-    cout << endl;
+ 
 
-    string month;
+    cout << month;
     cin >> month2;
-    cout << endl;
-    string rain, month2;
+    cout << rain << month2 << " ";
     cin >> rain2;
-    cout << endl;
 
-    string month;
+    cout << month;
     cin >> month3;
-    cout << endl;
-    string rain, month3;
+    cout << rain << month3 << " ";
     cin >> rain3;
     
-    
-    
+    rainTotal = (rain1 + rain2 + rain3) / 3;
+    cout << setprecision(2) << fixed;
     cout << "The average rainfall for " << month1 << ", " << month2 <<
-    ", and " << month3 << "is " << rainTotal << " inches.";
+    ", and " << month3 << " is " << rainTotal << " inches.";
 
 }
 
