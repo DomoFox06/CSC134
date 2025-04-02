@@ -10,7 +10,13 @@
 #include <iomanip>
 
 using namespace std;
+double getLength();
+double getHeight();
+double getWidth();
+
 int main(){
+
+    
 bool keep_going = true;
 int choice;
 void question1 ();
@@ -88,7 +94,38 @@ void question1() {
 
 void question2() {
     int age = 30;
-    cout << "Question 2 goes here" << endl;
+    double height, width, length, area;
+
+
+cout << "Getting the area of a 3D rectangle" << endl << endl;
+
+width = getWidth();
+height = getHeight();
+length = getLength();
+
+//Surface Area = 2(lw + lh + wh)
+area = 2 * (length * width + length * height + width * height);
+
+cout << "The area of your 3D rectangle is " << area;
+}
+double getWidth(){
+    cout << endl << "Please input width: ";
+    double width;
+    cin >> width;
+    return width;
+}
+double getHeight(){
+    cout << endl << "Please input height: ";
+    double height;
+    cin >> height;
+    return height;
+}
+double getLength(){
+    cout << endl << "Please input length: ";
+    double length;
+cin >> length;
+cout << endl;
+    return length;
 }
 void question3(){
     int age = 30;
@@ -113,5 +150,8 @@ void question3(){
 }
 void question4() {
     int age = 30;
-    cout << "Question 4 goes here" << endl;
+    cout << "Geometry Calculator" << endl << "1. Calculate the Area of a Circle" << endl << "2. Calculate the Area of a Rectangle"
+<< endl << "3. Calculate the Area of a Triangle" << endl << "4. Quit" << endl << "Enter your choice (1-4):" << endl;
+
+
 }
