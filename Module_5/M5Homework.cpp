@@ -5,7 +5,7 @@
 // 4/2/2025
 
 
-
+#include <cmath>
 #include <iostream>
 #include <iomanip>
 
@@ -14,51 +14,52 @@ double getLength();
 double getHeight();
 double getWidth();
 
-int main(){
-
-    
-bool keep_going = true;
-int choice;
 void question1 ();
 void question2 ();
 void question3 ();
 void question4 ();
 
-while (true == keep_going){
-    cout << "1. Question 1" << endl;
-    cout << "2. Question 2" << endl;
-    cout << "3. Question 3" << endl;
-    cout << "4. Question 4" << endl;
-    cout << "0. Exit" << endl;
+void triangle ();
+void circle ();
+void rectangle ();
 
-    cin >> choice;
-    if (1 == choice){
-    question1();
-    keep_going = false;
-    }
-    else if (2 == choice){
-        question2();
+int main(){  
+    bool keep_going = true;
+    int choice;
+
+    while (true == keep_going){
+        cout << "1. Question 1" << endl;
+        cout << "2. Question 2" << endl;
+        cout << "3. Question 3" << endl;
+        cout << "4. Question 4" << endl;
+        cout << "0. Exit" << endl;
+
+        cin >> choice;
+        if (1 == choice){
+        question1();
         keep_going = false;
+        }
+        else if (2 == choice){
+            question2();
+            keep_going = false;
+        }
+        else if (3 == choice){
+            question3();
+            keep_going = false;
+        }
+        else if (4 == choice){
+            question4();
+            keep_going = false;
+        }
+        else if(0 == choice){
+            cout << "Bye bye! Have a good day!" << endl;
+            keep_going = false;
+        }
+        else{
+            cout << "Not valid choice" << endl;
+        }
+
     }
-else if (3 == choice){
-    question3();
-    keep_going = false;
-}
-else if (4 == choice){
-    question4();
-    keep_going = false;
-}
-else if(0 == choice){
-    cout << "Bye bye! Have a good day!" << endl;
-    keep_going = false;
-}
-else{
-    cout << "Not valid choice" << endl;
-    }
-
-}
-
-
     return 0;
 }
 void question1() {
@@ -150,8 +151,53 @@ void question3(){
 }
 void question4() {
     int age = 30;
+   
     cout << "Geometry Calculator" << endl << "1. Calculate the Area of a Circle" << endl << "2. Calculate the Area of a Rectangle"
 << endl << "3. Calculate the Area of a Triangle" << endl << "4. Quit" << endl << "Enter your choice (1-4):" << endl;
+int choice;
+cin >> choice;
+if (1 == choice){ circle(); }
+if (2 == choice){ rectangle(); }
+if (3 == choice){ triangle();}
+if (4 == choice){cout << "Bye bye";}
+}
+void circle() {
+    double area;
+double radi;
+const double pi = 3.14159;
+    do{
+    cout << "Area of a circle!" << endl << "Please enter the radius: ";
+    cin >> radi;
+    }while (radi < 0);
+area = pi * radi * radi;
+cout << "The area of your circle is " << area << endl;
+}
 
+void rectangle(){
+    double area, length, width;
+    do{
+    cout << "Area of a reactangle!" << endl << "Please enter the length and width" << endl;
+    
+    cout << "Length: ";
+    cin >> length;
+    cout << endl << "Width: ";
+    cin >> width;
+    } while (length < 0 && width < 0);
+area = width * length;
+    cout << endl << "The area of your rectangle is " << area << endl;
+}
+
+void triangle(){
+    double area, base, height;
+    do{
+    cout << "Area of a triangle!" << endl << "Please enter the base and height" << endl;
+   
+    cout << "Base: ";
+    cin >> base;
+    cout << endl << "Height: ";
+    cin >> height;
+    }while(base < 0 && height < 0);
+    area = base * height * .5;
+    cout << endl << "The area of your triangle is " << area << endl;
 
 }
