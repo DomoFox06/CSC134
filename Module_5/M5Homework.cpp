@@ -28,7 +28,7 @@ void rectangle ();
 int main(){  
     bool keep_going = true;
     int choice;
-
+    do{
     while (true == keep_going){
         cout << "1. Question 1" << endl;
         cout << "2. Question 2" << endl;
@@ -72,6 +72,7 @@ int main(){
         }
 
     }
+    } while(choice > 5 && choice < 0);
     return 0;
 }
 void question1() {
