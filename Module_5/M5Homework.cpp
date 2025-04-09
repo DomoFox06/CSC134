@@ -225,14 +225,14 @@ void question5(){
     cin >> hours;
     } while (hours < 1);
 
-    for (int i = hours; i > 0; i--){
-       double distance = mph * hours;
-       cout << hours <<" "<< distance << endl;
-       
-       hours = hours - 1;
-    }
-
     cout << endl << "Hour Distance Traveled " << endl;
     cout << "--------------------------------" << endl;
+
+    for (int i = hours; i > 0; i--){
+        double distance = mph * i;
+        cout << hours <<  setw(15) << distance << endl;
+        
+        hours = hours - 1;
+     }
 
 }
