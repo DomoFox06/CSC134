@@ -18,6 +18,8 @@ void question1 ();
 void question2 ();
 void question3 ();
 void question4 ();
+void question5 ();
+//void question6 ();
 
 void triangle ();
 void circle ();
@@ -32,6 +34,8 @@ int main(){
         cout << "2. Question 2" << endl;
         cout << "3. Question 3" << endl;
         cout << "4. Question 4" << endl;
+        cout << "5. Question 5" << endl;
+       // cout << "6. Question 6" << endl;
         cout << "0. Exit" << endl;
 
         cin >> choice;
@@ -51,6 +55,14 @@ int main(){
             question4();
             keep_going = false;
         }
+        else if (5 == choice){
+            question5();
+            keep_going = false;
+        }
+        /*else if (6 == choice){
+            question6();
+            keep_going = false;
+        } */
         else if(0 == choice){
             cout << "Bye bye! Have a good day!" << endl;
             keep_going = false;
@@ -199,5 +211,28 @@ void triangle(){
     }while(base < 0 && height < 0);
     area = base * height * .5;
     cout << endl << "The area of your triangle is " << area << endl;
+}
+
+void question5(){
+    int mph;
+    double hours;
+    do{
+    cout << "What is the speed of the vehicle in mph? ";
+    cin >> mph;
+    } while (mph < 0);
+    do{
+    cout << endl << "How many hours has it traveled? ";
+    cin >> hours;
+    } while (hours < 1);
+
+    for (int i = hours; i > 0; i--){
+       double distance = mph * hours;
+       cout << hours <<" "<< distance << endl;
+       
+       hours = hours - 1;
+    }
+
+    cout << endl << "Hour Distance Traveled " << endl;
+    cout << "--------------------------------" << endl;
 
 }
