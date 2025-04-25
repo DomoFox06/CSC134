@@ -10,18 +10,37 @@ Final Project
 #include <ctime>
 #include <string>
 using namespace std;
-
+// sections
 void Start();
 void Charecter();
 void Name();
 void GameStart();
 void GamePlay();
+// data
+char p1avatar();
+string p1name();
+int p1score();
+int p1I_dbl_spc();
+char p2avatar();
+string p2name();
+int p2score();
+int p2I_dbl_spc();
+// Levels
+void Item();
+void go_foward();
+void go_back();
+void chance();
+void do_nothing();
+void Skip();
 //The dice rolling random number
 int rollDice() {
     return (rand() % 10 + 1);
 }
 int rollDice2() {
     return (rand() % 10 + 1);
+}
+int rollDice_Item() {
+    return (rand() % 4 + 1);
 }
 int main(){
 
@@ -50,6 +69,7 @@ int main(){
 void Charecter(){
 cout << endl << "Time to choose your charecter!" << endl;
 int p1, p1a, p2, p2a;
+ 
 char Fla = '🦩';
 char Fox = '🦊';
 char L = '🦁';
@@ -70,7 +90,7 @@ if (p1a_C = 3){p1a = L;}
 if (p1a_C = 4){p1a = BR;}
 if (p1a_C = 5){p1a = BA;}
 if (p1a_C = 6){p1a = P;}
-
+p1a = p1avatar();
 cout << "Good choice!" << endl;
 cout << "Player 2, please choose your charecter!";
 cout << " 1. " << Fla << " 2. " << Fox << " 3. " << L << " 4. " << BR << " 5. " << BA << " 6. " << P << endl;
@@ -85,6 +105,7 @@ if (p2a_C = 3){p2a = L;}
 if (p2a_C = 4){p2a = BR;}
 if (p2a_C = 5){p2a = BA;}
 if (p2a_C = 6){p2a = P;}
+p2a = p2avatar();
 cout << "Good choice!" << endl;
  Name();
 
@@ -118,6 +139,45 @@ cout << endl << "Now I will explain how the game is played." << endl <<
 
  GamePlay();
 }
+
+void Item(){
+int dbl_nxt_spc, cncl_go_bck, opnt_go_back, go_frwd;
+
+int Ri = rollDice_Item();
+    if (Ri = 1) {
+        cout << "Your next space is doubled!" << endl
+        << "Be careful, that might mean that you go back double" << endl;
+        dbl_nxt_spc++;
+    }
+    if (Ri = 2) {
+        cout << "This cancels out the next Go Back space!" << endl;
+        cncl_go_bck++;
+    }
+    if (Ri = 3) {
+        cout << "Oof! Sorry " /*<< p2n <<*/ ". You have to go back 5 spaces" << endl;
+        int p2s = p2s - 5;
+    }
+    if (Ri = 4) {
+        cout << "Yay! You move foward five spaces!" << endl;
+        int p1s = p1s + 5;}
+
+}
+void go_foward(){
+cout << "Go Forward!" << endl << "Go to the next space!" << endl;
+}
+void go_back(){
+cout << "Go Back!" << endl << "Move back one space!" <<endl;
+}
+void chance(){
+cout << "Chance!" << endl << "A space action is randomly given to you!" << endl;
+}
+void do_nothing(){
+cout << "Do Nothing!" << endl;
+}
+void Skip(){
+    cout << "Oof! Your next turn is skipped!" << endl;
+}
+
     void GamePlay(){
     int total;
     char roll_choice;
@@ -143,7 +203,24 @@ do{
         cout << die;
         p1s++;
     }
-    
+   
+    if (p1s == 1 || p1s == 6 ||p1s == 11 ||p1s == 16 ||p1s == 21 ||p1s == 26 ||p1s == 31 ||p1s == 36 ||p1s == 41 ||p1s == 46){
+        go_foward();
+    }
+    else if (p1s == 2 ||p1s == 9 ||p1s == 12 ||p1s == 19 ||p1s == 22 ||p1s == 29 ||p1s == 32 ||p1s == 39 ||p1s == 42 ||p1s == 49 ){
+        Item();
+    }
+    else if (p1s == 3 ||p1s == 8 ||p1s == 13 ||p1s == 18 ||p1s == 23 ||p1s == 28 ||p1s == 33 ||p1s == 38 ||p1s == 43 ||p1s == 48){
+        go_back();
+    }
+    else if (p1s == 4 ||p1s == 7 ||p1s == 14 ||p1s == 17 ||p1s == 24 ||p1s == 27 ||p1s == 34 ||p1s == 37 ||p1s == 44 ||p1s == 47 ){
+        do_nothing();
+    }else if (p1s == 5 ||p1s == 15 ||p1s == 25 ||p1s == 35 ||p1s == 45){
+        chance();
+    }
+    else if (p1s == 10 ||p1s == 20 ||p1s == 30 ||p1s == 40 ||p1s == 50){
+        Skip();
+    }
     do{
         cout << endl << p2n << "'s turn!" << endl << "Roll the die!" << endl;
        cout << "Push r to roll " ;
@@ -156,6 +233,23 @@ do{
        }
        p2s = p2s + roll2;
        
+    if (p2s == 1 || p2s == 6 ||p2s == 11 ||p2s == 16 ||p2s == 21 ||p2s == 26 ||p2s == 31 ||p2s == 36 ||p2s == 41 ||p2s == 46){
+        go_foward();
+    }
+    else if (p2s == 2 ||p2s == 9 ||p2s == 12 ||p2s == 19 ||p2s == 22 ||p2s == 29 ||p2s == 32 ||p2s == 39 ||p2s == 42 ||p2s == 49 ){
+        Item();
+    }
+    else if (p2s == 3 ||p2s == 8 ||p2s == 13 ||p2s == 18 ||p2s == 23 ||p2s == 28 ||p2s == 33 ||p2s == 38 ||p2s == 43 ||p2s == 48){
+        go_back();
+    }
+    else if (p2s == 4 ||p2s == 7 ||p2s == 14 ||p2s == 17 ||p2s == 24 ||p2s == 27 ||p2s == 34 ||p2s == 37 ||p2s == 44 ||p2s == 47 ){
+        do_nothing();
+    }else if (p2s == 5 ||p2s == 15 ||p2s == 25 ||p2s == 35 ||p2s == 45){
+        chance();
+    }
+    else if (p2s == 10 ||p2s == 20 ||p2s == 30 ||p2s == 40 ||p2s == 50){
+        Skip();
+    }
        cout << endl << p1N << "'s score: " << p1s << endl <<
        p2n << "'s score : " << p2s << endl;
     
