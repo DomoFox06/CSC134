@@ -15,53 +15,21 @@ void Start();
 void Charecter();
 void Name();
 void GameStart();
+void GamePlay();
 //The dice rolling random number
 int rollDice() {
+    return (rand() % 10 + 1);
+}
+int rollDice2() {
     return (rand() % 10 + 1);
 }
 int main(){
 
     srand(time(0)); //Random number generator
 
+    Start();
     
-    
-        int total;
-        char roll_choice;
-        char R_C = 'r';
-        int roll = rollDice();
-        int p1s, p2s;
-        string p1N;
-        string p2n;
-
-        do{
-        do{
-         cout << p1N << "'s turn!" << endl << "Roll the die!" << endl;
-        cout << "Push r to roll " ;
-        cin >> roll_choice;
-        } while (roll_choice != R_C);
-        cout << "Your roll is: " << roll << "!" ;
-        for (int i =0; i < roll; i++){
-            string die = "🎲";
-            cout << die;
-            p1s++;
-        }
-
-        do{
-            cout << endl << p2n << "'s turn!" << endl << "Roll the die!" << endl;
-           cout << "Push r to roll " ;
-           cin >> roll_choice;
-           } while (roll_choice != R_C);
-           cout << "Your roll is: " << roll << "!" ;
-           for (int i =0; i < roll; i++){
-               string die = "🎲";
-               cout << die;
-               p2s++;
-           }
-           cout << endl << p1N << "'s score: " << p1s << endl <<
-           p2n << "'s score : " << p2s << endl;
-        
-        } while (p1s > 50 && p2s > 50);
-
+       
 
 
 
@@ -133,11 +101,11 @@ void Name(){
     cin >> p1N;
         
      cout << "Welcome " << p1N << "! That is a great name!" << endl;
-    cout << "Player 2, please input your name: ";
+    cout << endl << "Player 2, please input your name: ";
     string p2n;
     cin >> p2n;
     cout << "Welcome " << p2n << "! That is also a great name!" << endl;
-    cout << "Now that names and charecters are in order, let us begin!";
+    cout << "Now that names and charecters are in order, let us begin!" << endl;
      GameStart();
 
 }
@@ -148,5 +116,49 @@ cout << endl << "Now I will explain how the game is played." << endl <<
  "These spaces will help you reach your goal, or prove to be an obstacle." << endl <<
  "The goal of the game is to reach the end before your oponent." << endl;
 
- Start();
+ GamePlay();
+}
+    void GamePlay(){
+    int total;
+    char roll_choice;
+    char R_C = 'r';
+    int roll = rollDice();
+    int roll2 = rollDice2();
+
+    int p1s = 0;
+    int p2s = 0;
+    string p1N;
+    string p2n;
+cout << endl << "Let's begin!" << endl << endl;
+do{
+    do{
+     cout << p1N << "'s turn!" << endl << "Roll the die!" << endl;
+    cout << "Push r to roll " ;
+    cin >> roll_choice;
+    } while (roll_choice != R_C);
+    cout << "Your roll is: " << roll << "!" ;
+   
+    for (int i =0; i < roll; i++){
+        string die = "🎲";
+        cout << die;
+        p1s++;
+    }
+    
+    do{
+        cout << endl << p2n << "'s turn!" << endl << "Roll the die!" << endl;
+       cout << "Push r to roll " ;
+       cin >> roll_choice;
+       } while (roll_choice != R_C);
+       cout << "Your roll is: " << roll2 << "!" ;
+       for (int i =0; i < roll2; i++){
+           string die = "🎲";
+           cout << die;
+       }
+       p2s = p2s + roll2;
+       
+       cout << endl << p1N << "'s score: " << p1s << endl <<
+       p2n << "'s score : " << p2s << endl;
+    
+    } while (p1s < 50 && p2s < 50);
+
 }
