@@ -23,15 +23,19 @@ int main(){
 
     srand(time(0)); //Random number generator
 
-    Start();
+    
     
         int total;
         char roll_choice;
         char R_C = 'r';
         int roll = rollDice();
+        int p1s, p2s;
+        string p1N;
+        string p2n;
 
-        cout << "Roll the die!" << endl;
         do{
+        do{
+         cout << p1N << "'s turn!" << endl << "Roll the die!" << endl;
         cout << "Push r to roll " ;
         cin >> roll_choice;
         } while (roll_choice != R_C);
@@ -39,10 +43,24 @@ int main(){
         for (int i =0; i < roll; i++){
             string die = "🎲";
             cout << die;
+            p1s++;
         }
+
+        do{
+            cout << endl << p2n << "'s turn!" << endl << "Roll the die!" << endl;
+           cout << "Push r to roll " ;
+           cin >> roll_choice;
+           } while (roll_choice != R_C);
+           cout << "Your roll is: " << roll << "!" ;
+           for (int i =0; i < roll; i++){
+               string die = "🎲";
+               cout << die;
+               p2s++;
+           }
+           cout << endl << p1N << "'s score: " << p1s << endl <<
+           p2n << "'s score : " << p2s << endl;
         
-        
-       
+        } while (p1s > 50 && p2s > 50);
 
 
 
@@ -127,5 +145,8 @@ void GameStart(){
 cout << endl << "Now I will explain how the game is played." << endl <<
 "You will each take turns rolling the die to move along the board" << endl
  << "Each space you land on will have actions you can take such as items" << endl <<
- "These spaces will help you reach your goal, or prove to be an obstacle.";
+ "These spaces will help you reach your goal, or prove to be an obstacle." << endl <<
+ "The goal of the game is to reach the end before your oponent." << endl;
+
+ Start();
 }
