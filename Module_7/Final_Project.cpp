@@ -106,22 +106,15 @@ cout << "Good choice!" << endl;
 void Name(){
     cout << endl << "Now you must choose your names!" << endl;
     string p1N;
-    string p1n;
-    do{
+   // string p1n;
+    
+
+    
+    cout << "(Warning! Do not input a space in name!)" << endl;
     cout << "Player 1, please input your name: ";
     cin >> p1N;
-    std::getline(std::cin, p1N);  // Read input including spaces
-
-    if (p1N.find(' ')!= std::string::npos) {
-        std::cout << endl << endl << "Space detected in the string." << std::endl;
-        cout << "Sorry, no spaces allowed in name. Please try again" << endl << endl;
-    }
-    else{
-  //  p1n = p1N;
-    }
-    } while (p1N.find(' ')!= std::string::npos);
-   
-    cout << "Welcome " << p1N << "! That is a great name!" << endl;
+        
+     cout << "Welcome " << p1N << "! That is a great name!" << endl;
     cout << "Player 2, please input your name: ";
     string p2n;
     cin >> p2n;
@@ -131,5 +124,8 @@ void Name(){
 
 }
 void GameStart(){
-cout << endl << "Now I will explain how the game is played." << endl;
+cout << endl << "Now I will explain how the game is played." << endl <<
+"You will each take turns rolling the die to move along the board" << endl
+ << "Each space you land on will have actions you can take such as items" << endl <<
+ "These spaces will help you reach your goal, or prove to be an obstacle.";
 }
