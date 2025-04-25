@@ -17,11 +17,11 @@ void Name();
 void GameStart();
 void GamePlay();
 // data
-char p1avatar();
+string p1avatar();
 string p1name();
 int p1score();
 int p1I_dbl_spc();
-char p2avatar();
+string p2avatar();
 string p2name();
 int p2score();
 int p2I_dbl_spc();
@@ -68,14 +68,14 @@ int main(){
 }
 void Charecter(){
 cout << endl << "Time to choose your charecter!" << endl;
-int p1, p1a, p2, p2a;
+string p1, p1a, p2, p2a;
  
-char Fla = '🦩';
-char Fox = '🦊';
-char L = '🦁';
-char BR = '🐻';
-char BA = '🦡';
-char P = '🐧';
+string Fla = "🦩";
+string Fox = "🦊";
+string L = "🦁";
+string BR = "🐻";
+string BA = "🦡";
+string P = "🐧";
 
 cout << "Player 1, please choose your charecter!";
 cout << " 1. " << Fla << " 2. " << Fox << " 3. " << L << " 4. " << BR << " 5. " << BA << " 6. " << P << endl;
@@ -98,7 +98,7 @@ int p2a_C;
 do{
 cout << "Input 1-6: ";
 cin >> p2a_C;
-} while (p2a_C > 6 || p2a < 0);
+} while (p2a_C > 6 || p2a_C < 0);
 if (p2a_C = 1){p2a = Fla;}
 if (p2a_C = 2){p2a = Fox;}
 if (p2a_C = 3){p2a = L;}
