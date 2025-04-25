@@ -142,7 +142,8 @@ cout << endl << "Now I will explain how the game is played." << endl <<
 
 void Item(){
 int dbl_nxt_spc, cncl_go_bck, opnt_go_back, go_frwd;
-
+int p1s = p1score();
+int p2s = p2score();
 int Ri = rollDice_Item();
     if (Ri = 1) {
         cout << "Your next space is doubled!" << endl
@@ -155,11 +156,11 @@ int Ri = rollDice_Item();
     }
     if (Ri = 3) {
         cout << "Oof! Sorry " /*<< p2n <<*/ ". You have to go back 5 spaces" << endl;
-        int p2s = p2s - 5;
+         p2s = p2s - 5;
     }
     if (Ri = 4) {
         cout << "Yay! You move foward five spaces!" << endl;
-        int p1s = p1s + 5;}
+         p1s = p1s + 5;}
 
 }
 void go_foward(){
@@ -187,6 +188,7 @@ void Skip(){
 
     int p1s = 0;
     int p2s = 0;
+    
     string p1N;
     string p2n;
 cout << endl << "Let's begin!" << endl << endl;
@@ -250,6 +252,8 @@ do{
     else if (p2s == 10 ||p2s == 20 ||p2s == 30 ||p2s == 40 ||p2s == 50){
         Skip();
     }
+    p1s = p1score();
+    p2s = p2score();
        cout << endl << p1N << "'s score: " << p1s << endl <<
        p2n << "'s score : " << p2s << endl;
     
