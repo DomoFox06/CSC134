@@ -22,9 +22,8 @@ private:
 string p1a;
 int p1s;
 public:
-p1avatar(string a1, int aS){
-    p1a = a1; 
-    p1s = aS;
+p1avatar(){
+    
 }
 void setName(string a1) {
     p1a = a1; 
