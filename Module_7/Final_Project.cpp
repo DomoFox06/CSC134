@@ -16,24 +16,28 @@ void Charecter();
 void Name();
 void GameStart();
 void GamePlay();
+void Move();
+void Move2();
 // data
 class Avatars{
 private:
 string p1a;
 int p1s;
 public:
-p1avatar(){
+void p1avatar(string &p1a){
     
 }
-void setName(string a1) {
+/*void setName(string a1) {
     p1a = a1; 
-}
-string p1name;
-int p1score;
+}*/
+void p1name(string &p1n){}
+void p1score(int &p1s){}
 //p1I_dbl_spc(){}
-string p2avatar;
-string p2name;
-int p2score;
+void p2avatar(string &p2a){
+
+}
+void p2name(string &p2n){}
+void p2score(int &p2s){}
 //p2I_dbl_spc(){}
 };
 // Levels
@@ -77,7 +81,7 @@ int main(){
         Charecter();
     }
 }
-void Charecter(){
+void Charecter(string &p1a){
 cout << endl << "Time to choose your charecter!" << endl;
 string p1, p1a, p2, p2a;
  
@@ -91,8 +95,8 @@ string P = "🐧";
 cout << "Player 1, please choose your charecter!";
 cout << " 1. " << Fla << " 2. " << Fox << " 3. " << L << " 4. " << BR << " 5. " << BA << " 6. " << P << endl;
 int p1a_C;
-Avatars avs = Avatars(); // holds all data
-string p1a = avs.p1avatar();
+//Avatars avs = Avatars(); // holds all data
+//string p1a = avs.p1avatar();
 do{
 cout << "Input 1-6: " ;
 cin >> p1a_C;
@@ -106,9 +110,19 @@ if (p1a_C = 5){p1a = BA;}
 if (p1a_C = 6){p1a = P;}
 
 getline(cin, p1a);
-avs.setName(p1a);
+//avs.setName(p1a);
 
 cout << "Good choice!" << endl;
+}
+void Charecter2(string &p2a){
+
+string Fla = "🦩";
+string Fox = "🦊";
+string L = "🦁";
+string BR = "🐻";
+string BA = "🦡";
+string P = "🐧";
+
 cout << "Player 2, please choose your charecter!";
 cout << " 1. " << Fla << " 2. " << Fox << " 3. " << L << " 4. " << BR << " 5. " << BA << " 6. " << P << endl;
 int p2a_C;
@@ -122,9 +136,11 @@ if (p2a_C = 3){p2a = L;}
 if (p2a_C = 4){p2a = BR;}
 if (p2a_C = 5){p2a = BA;}
 if (p2a_C = 6){p2a = P;}
-p2a = p2avatar();
+
+getline(cin, p2a);
+
 cout << "Good choice!" << endl;
- Name();
+ //Name();
 
 }
 void Name(){
@@ -159,8 +175,12 @@ cout << endl << "Now I will explain how the game is played." << endl <<
 
 void Item(){
 int dbl_nxt_spc, cncl_go_bck, opnt_go_back, go_frwd;
-int p1s = p1score();
-int p2s = p2score();
+int p1s;
+int p2s;/*
+int p1score = 0;
+int p2score = 0;
+p1score(p1s);
+p2score(p2s);*/
 int Ri = rollDice_Item();
     if (Ri = 1) {
         cout << "Your next space is doubled!" << endl
@@ -196,7 +216,7 @@ void Skip(){
     cout << "Oof! Your next turn is skipped!" << endl;
 }
 
-    void GamePlay(){
+    void GamePlay(int &p1s){
     int total;
     char roll_choice;
     char R_C = 'r';
@@ -222,6 +242,9 @@ do{
         cout << die;
         p1s++;
     }
+}
+
+void Move(){
    
     if (p1s == 1 || p1s == 6 ||p1s == 11 ||p1s == 16 ||p1s == 21 ||p1s == 26 ||p1s == 31 ||p1s == 36 ||p1s == 41 ||p1s == 46){
         go_foward();
@@ -240,16 +263,22 @@ do{
     else if (p1s == 10 ||p1s == 20 ||p1s == 30 ||p1s == 40 ||p1s == 50){
         Skip();
     }
-    do{
-        cout << endl << p2n << "'s turn!" << endl << "Roll the die!" << endl;
-       cout << "Push r to roll " ;
-       cin >> roll_choice;
-       } while (roll_choice != R_C);
-       cout << "Your roll is: " << roll2 << "!" ;
-       for (int i =0; i < roll2; i++){
-           string die = "🎲";
-           cout << die;
-       }
+    
+    }
+    void Move2(){
+        do{
+
+        do{
+            cout << endl << p2n << "'s turn!" << endl << "Roll the die!" << endl;
+           cout << "Push r to roll " ;
+           cin >> roll_choice;
+           } while (roll_choice != R_C);
+           cout << "Your roll is: " << roll2 << "!" ;
+           for (int i =0; i < roll2; i++){
+               string die = "🎲";
+               cout << die;
+           }
+
        p2s = p2s + roll2;
        
     if (p2s == 1 || p2s == 6 ||p2s == 11 ||p2s == 16 ||p2s == 21 ||p2s == 26 ||p2s == 31 ||p2s == 36 ||p2s == 41 ||p2s == 46){
@@ -269,11 +298,14 @@ do{
     else if (p2s == 10 ||p2s == 20 ||p2s == 30 ||p2s == 40 ||p2s == 50){
         Skip();
     }
-    p1s = p1score();
-    p2s = p2score();
+    /*
+    int p1score = 0;
+    int p2score = 0;
+    p1score(p1s);
+    p2score(p2s);*/
        cout << endl << p1N << "'s score: " << p1s << endl <<
        p2n << "'s score : " << p2s << endl;
-    
-    } while (p1s < 50 && p2s < 50);
 
+    } while (p1s < 50 && p2s < 50);
+    
 }
