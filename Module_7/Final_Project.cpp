@@ -17,14 +17,26 @@ void Name();
 void GameStart();
 void GamePlay();
 // data
-string p1avatar();
-string p1name();
-int p1score();
-int p1I_dbl_spc();
-string p2avatar();
-string p2name();
-int p2score();
-int p2I_dbl_spc();
+class Avatars{
+private:
+string p1a;
+int p1s;
+public:
+p1avatar(string a1, int aS){
+    p1a = a1; 
+    p1s = aS;
+}
+void setName(string a1) {
+    p1a = a1; 
+}
+string p1name;
+int p1score;
+//p1I_dbl_spc(){}
+string p2avatar;
+string p2name;
+int p2score;
+//p2I_dbl_spc(){}
+};
 // Levels
 void Item();
 void go_foward();
@@ -80,9 +92,12 @@ string P = "🐧";
 cout << "Player 1, please choose your charecter!";
 cout << " 1. " << Fla << " 2. " << Fox << " 3. " << L << " 4. " << BR << " 5. " << BA << " 6. " << P << endl;
 int p1a_C;
+Avatars avs = Avatars(); // holds all data
+string p1a = avs.p1avatar();
 do{
 cout << "Input 1-6: " ;
 cin >> p1a_C;
+
 } while (p1a_C > 6 || p1a_C < 0);
 if (p1a_C = 1){p1a = Fla;}
 if (p1a_C = 2){p1a = Fox;}
@@ -90,7 +105,10 @@ if (p1a_C = 3){p1a = L;}
 if (p1a_C = 4){p1a = BR;}
 if (p1a_C = 5){p1a = BA;}
 if (p1a_C = 6){p1a = P;}
-p1a = p1avatar();
+
+getline(cin, p1a);
+avs.setName(p1a);
+
 cout << "Good choice!" << endl;
 cout << "Player 2, please choose your charecter!";
 cout << " 1. " << Fla << " 2. " << Fox << " 3. " << L << " 4. " << BR << " 5. " << BA << " 6. " << P << endl;
