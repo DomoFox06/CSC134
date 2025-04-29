@@ -16,13 +16,13 @@ void Charecter();
 void Name();
 void GameStart();
 void GamePlay();
-void Move();
-void Move2();
+
 // data
 class Avatars{
 private:
 string p1a;
 int p1s;
+int Ri;
 public:
 void p1avatar(string &p1a){
     
@@ -41,12 +41,14 @@ void p2score(int &p2s){}
 //p2I_dbl_spc(){}
 };
 // Levels
-void Item();
+
 void go_foward();
 void go_back();
 void chance();
 void do_nothing();
 void Skip();
+//
+
 //The dice rolling random number
 int rollDice() {
     return (rand() % 10 + 1);
@@ -81,9 +83,9 @@ int main(){
         Charecter();
     }
 }
-void Charecter(string &p1a){
+void Charecter(string &p1a, string &p2a){
 cout << endl << "Time to choose your charecter!" << endl;
-string p1, p1a, p2, p2a;
+//string p1, p2;
  
 string Fla = "🦩";
 string Fox = "🦊";
@@ -113,15 +115,6 @@ getline(cin, p1a);
 //avs.setName(p1a);
 
 cout << "Good choice!" << endl;
-}
-void Charecter2(string &p2a){
-
-string Fla = "🦩";
-string Fox = "🦊";
-string L = "🦁";
-string BR = "🐻";
-string BA = "🦡";
-string P = "🐧";
 
 cout << "Player 2, please choose your charecter!";
 cout << " 1. " << Fla << " 2. " << Fox << " 3. " << L << " 4. " << BR << " 5. " << BA << " 6. " << P << endl;
@@ -145,19 +138,22 @@ cout << "Good choice!" << endl;
 }
 void Name(){
     cout << endl << "Now you must choose your names!" << endl;
-    string p1N;
-   // string p1n;
+   // string p1N;
+    string p1n;
     
 
     
     cout << "(Warning! Do not input a space in name!)" << endl;
     cout << "Player 1, please input your name: ";
-    cin >> p1N;
+    cin.ignore();
+    getline(cin, p1n);
+    
         
-     cout << "Welcome " << p1N << "! That is a great name!" << endl;
+     cout << "Welcome " << p1n << "! That is a great name!" << endl;
     cout << endl << "Player 2, please input your name: ";
     string p2n;
-    cin >> p2n;
+    cin.ignore();
+    getline(cin, p2n);
     cout << "Welcome " << p2n << "! That is also a great name!" << endl;
     cout << "Now that names and charecters are in order, let us begin!" << endl;
      GameStart();
@@ -173,7 +169,7 @@ cout << endl << "Now I will explain how the game is played." << endl <<
  GamePlay();
 }
 
-void Item(){
+void Item(int &Ri){
 int dbl_nxt_spc, cncl_go_bck, opnt_go_back, go_frwd;
 int p1s;
 int p2s;/*
@@ -181,7 +177,7 @@ int p1score = 0;
 int p2score = 0;
 p1score(p1s);
 p2score(p2s);*/
-int Ri = rollDice_Item();
+Ri = rollDice_Item();
     if (Ri = 1) {
         cout << "Your next space is doubled!" << endl
         << "Be careful, that might mean that you go back double" << endl;
@@ -216,15 +212,15 @@ void Skip(){
     cout << "Oof! Your next turn is skipped!" << endl;
 }
 
-    void GamePlay(int &p1s){
+    void GamePlay(int &p1s, int &p2s){
     int total;
     char roll_choice;
     char R_C = 'r';
     int roll = rollDice();
     int roll2 = rollDice2();
 
-    int p1s = 0;
-    int p2s = 0;
+    p1s = 0;
+    p2s = 0;
     
     string p1N;
     string p2n;
@@ -242,9 +238,9 @@ do{
         cout << die;
         p1s++;
     }
-}
 
-void Move(){
+
+
    
     if (p1s == 1 || p1s == 6 ||p1s == 11 ||p1s == 16 ||p1s == 21 ||p1s == 26 ||p1s == 31 ||p1s == 36 ||p1s == 41 ||p1s == 46){
         go_foward();
@@ -264,9 +260,9 @@ void Move(){
         Skip();
     }
     
-    }
-    void Move2(){
-        do{
+    
+   
+        
 
         do{
             cout << endl << p2n << "'s turn!" << endl << "Roll the die!" << endl;
