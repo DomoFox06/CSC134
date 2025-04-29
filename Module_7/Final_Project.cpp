@@ -18,12 +18,12 @@ void GameStart();
 void GamePlay();
 
 // data
-class Avatars{
-private:
+//class Avatars{
+//private:
 string p1a;
 int p1s;
 int Ri;
-public:
+//public:
 void p1avatar(string &p1a){
     
 }
@@ -39,7 +39,7 @@ void p2avatar(string &p2a){
 void p2name(string &p2n){}
 void p2score(int &p2s){}
 //p2I_dbl_spc(){}
-};
+//};
 // Levels
 
 void go_foward();
@@ -79,7 +79,7 @@ int main(){
      cout << "Please input s to start the game and choose your avatar: " ;
     cin >> choice;
     } while (s != choice); 
-    if (s = s){
+    if (s == s){
         Charecter();
     }
 }
@@ -104,13 +104,14 @@ cout << "Input 1-6: " ;
 cin >> p1a_C;
 
 } while (p1a_C > 6 || p1a_C < 0);
-if (p1a_C = 1){p1a = Fla;}
-if (p1a_C = 2){p1a = Fox;}
-if (p1a_C = 3){p1a = L;}
-if (p1a_C = 4){p1a = BR;}
-if (p1a_C = 5){p1a = BA;}
-if (p1a_C = 6){p1a = P;}
+if (p1a_C == 1){p1a = Fla;}
+if (p1a_C == 2){p1a = Fox;}
+if (p1a_C == 3){p1a = L;}
+if (p1a_C == 4){p1a = BR;}
+if (p1a_C == 5){p1a = BA;}
+if (p1a_C == 6){p1a = P;}
 
+cin.ignore();
 getline(cin, p1a);
 //avs.setName(p1a);
 
@@ -123,37 +124,37 @@ do{
 cout << "Input 1-6: ";
 cin >> p2a_C;
 } while (p2a_C > 6 || p2a_C < 0);
-if (p2a_C = 1){p2a = Fla;}
-if (p2a_C = 2){p2a = Fox;}
-if (p2a_C = 3){p2a = L;}
-if (p2a_C = 4){p2a = BR;}
-if (p2a_C = 5){p2a = BA;}
-if (p2a_C = 6){p2a = P;}
+if (p2a_C == 1){p2a = Fla;}
+if (p2a_C == 2){p2a = Fox;}
+if (p2a_C == 3){p2a = L;}
+if (p2a_C == 4){p2a = BR;}
+if (p2a_C == 5){p2a = BA;}
+if (p2a_C == 6){p2a = P;}
 
+cin.ignore();
 getline(cin, p2a);
 
 cout << "Good choice!" << endl;
  //Name();
-
+ return p1a;
+ return p2a;
 }
-void Name(){
+void Name(string p1n, string p2n){
     cout << endl << "Now you must choose your names!" << endl;
    // string p1N;
     string p1n;
     
-
-    
-    cout << "(Warning! Do not input a space in name!)" << endl;
     cout << "Player 1, please input your name: ";
     cin.ignore();
     getline(cin, p1n);
-    
+    return p1n;
         
      cout << "Welcome " << p1n << "! That is a great name!" << endl;
     cout << endl << "Player 2, please input your name: ";
     string p2n;
     cin.ignore();
     getline(cin, p2n);
+    return p2n;
     cout << "Welcome " << p2n << "! That is also a great name!" << endl;
     cout << "Now that names and charecters are in order, let us begin!" << endl;
      GameStart();
@@ -169,8 +170,9 @@ cout << endl << "Now I will explain how the game is played." << endl <<
  GamePlay();
 }
 
-void Item(int &p1s, int &p2s, int &dbl_nxt_spc, int &cncl_go_bck, int &opnt_go_back, int &go_frwd){
-//int dbl_nxt_spc, cncl_go_bck, opnt_go_back, go_frwd;
+void Item(int &p1s, int &p2s) {
+    
+int dbl_nxt_spc, cncl_go_bck, opnt_go_back, go_frwd;
 //int p1s;
 //int p2s;/*
 //int p1score = 0;
@@ -212,7 +214,7 @@ void Skip(){
     cout << "Oof! Your next turn is skipped!" << endl;
 }
 
-    void GamePlay(int &p1s, int &p2s){
+    void GamePlay(int &p1s, int &p2s, string p1a, string p1n, string p2a, string p2n){
     int total;
     char roll_choice;
     char R_C = 'r';
@@ -247,11 +249,7 @@ do{
     }
     else if (p1s == 2 ||p1s == 9 ||p1s == 12 ||p1s == 19 ||p1s == 22 ||p1s == 29 ||p1s == 32 ||p1s == 39 ||p1s == 42 ||p1s == 49 ){
         Item();
-        if (int dbl_nxt_spc > 0){
-            
-        }
-
-    }
+      }
     else if (p1s == 3 ||p1s == 8 ||p1s == 13 ||p1s == 18 ||p1s == 23 ||p1s == 28 ||p1s == 33 ||p1s == 38 ||p1s == 43 ||p1s == 48){
         go_back();
     }
