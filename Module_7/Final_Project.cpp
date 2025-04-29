@@ -234,11 +234,16 @@ void Skip(){
 
     p1s = 0;
     p2s = 0;
-    
+
+    int p1Skip;
+   if (p1s == 10 ||p1s == 20 ||p1s == 30 ||p1s == 40 ||p1s == 50){
+    p1Skip++;
+   }
     
 cout << endl << "Let's begin!" << endl << endl;
 do{
     do{
+         do{
      cout << p1n << "'s turn!" << endl << "Roll the die!" << endl;
     cout << "Push r to roll " ;
     cin >> roll_choice;
@@ -250,7 +255,10 @@ do{
         cout << die;
         p1s++;
     }
-
+    while (p1Skip > 0){
+        p1Skip--;
+    }
+} while (p1Skip != 0);
 
 
    
@@ -273,7 +281,7 @@ do{
     }
     
     
-   
+    
         
 
         do{
