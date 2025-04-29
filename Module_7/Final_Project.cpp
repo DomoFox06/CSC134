@@ -235,10 +235,7 @@ void Skip(){
     p1s = 0;
     p2s = 0;
 
-    int p1Skip;
-   if (p1s == 10 ||p1s == 20 ||p1s == 30 ||p1s == 40 ||p1s == 50){
-    p1Skip++;
-   }
+   int p1Skip;
     
 cout << endl << "Let's begin!" << endl << endl;
 do{
@@ -264,12 +261,14 @@ do{
    
     if (p1s == 1 || p1s == 6 ||p1s == 11 ||p1s == 16 ||p1s == 21 ||p1s == 26 ||p1s == 31 ||p1s == 36 ||p1s == 41 ||p1s == 46){
         go_foward();
+        p1s++;
     }
     else if (p1s == 2 ||p1s == 9 ||p1s == 12 ||p1s == 19 ||p1s == 22 ||p1s == 29 ||p1s == 32 ||p1s == 39 ||p1s == 42 ||p1s == 49 ){
         Item(p1s, p2s);
               }
     else if (p1s == 3 ||p1s == 8 ||p1s == 13 ||p1s == 18 ||p1s == 23 ||p1s == 28 ||p1s == 33 ||p1s == 38 ||p1s == 43 ||p1s == 48){
         go_back();
+        p1s--;
     }
     else if (p1s == 4 ||p1s == 7 ||p1s == 14 ||p1s == 17 ||p1s == 24 ||p1s == 27 ||p1s == 34 ||p1s == 37 ||p1s == 44 ||p1s == 47 ){
         do_nothing();
@@ -278,12 +277,14 @@ do{
     }
     else if (p1s == 10 ||p1s == 20 ||p1s == 30 ||p1s == 40 ||p1s == 50){
         Skip();
+        p1Skip++;
     }
     
     
     
-        
-
+        int p2Skip;
+       
+    do{
         do{
             cout << endl << p2n << "'s turn!" << endl << "Roll the die!" << endl;
            cout << "Push r to roll " ;
@@ -295,17 +296,22 @@ do{
                cout << die;
                p2s++;
            }
-
+           while (p2Skip > 0){
+            p2Skip--;
+           }
+    }while (p2Skip > 0);
       
        
     if (p2s == 1 || p2s == 6 ||p2s == 11 ||p2s == 16 ||p2s == 21 ||p2s == 26 ||p2s == 31 ||p2s == 36 ||p2s == 41 ||p2s == 46){
         go_foward();
+        p2s++;
     }
     else if (p2s == 2 ||p2s == 9 ||p2s == 12 ||p2s == 19 ||p2s == 22 ||p2s == 29 ||p2s == 32 ||p2s == 39 ||p2s == 42 ||p2s == 49 ){
         Item(p1s, p2s);
     }
     else if (p2s == 3 ||p2s == 8 ||p2s == 13 ||p2s == 18 ||p2s == 23 ||p2s == 28 ||p2s == 33 ||p2s == 38 ||p2s == 43 ||p2s == 48){
         go_back();
+        p2s--;
     }
     else if (p2s == 4 ||p2s == 7 ||p2s == 14 ||p2s == 17 ||p2s == 24 ||p2s == 27 ||p2s == 34 ||p2s == 37 ||p2s == 44 ||p2s == 47 ){
         do_nothing();
@@ -314,6 +320,7 @@ do{
     }
     else if (p2s == 10 ||p2s == 20 ||p2s == 30 ||p2s == 40 ||p2s == 50){
         Skip();
+        p2Skip++;
     }
     /*
     int p1score = 0;
