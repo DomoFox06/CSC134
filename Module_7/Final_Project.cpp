@@ -169,15 +169,15 @@ cout << endl << "Now I will explain how the game is played." << endl <<
  GamePlay();
 }
 
-void Item(int &Ri){
-int dbl_nxt_spc, cncl_go_bck, opnt_go_back, go_frwd;
-int p1s;
-int p2s;/*
-int p1score = 0;
-int p2score = 0;
-p1score(p1s);
-p2score(p2s);*/
-Ri = rollDice_Item();
+void Item(int &p1s, int &p2s, int &dbl_nxt_spc, int &cncl_go_bck, int &opnt_go_back, int &go_frwd){
+//int dbl_nxt_spc, cncl_go_bck, opnt_go_back, go_frwd;
+//int p1s;
+//int p2s;/*
+//int p1score = 0;
+//int p2score = 0;
+//p1score(p1s);
+//p2score(p2s);*/
+int Ri = rollDice_Item();
     if (Ri = 1) {
         cout << "Your next space is doubled!" << endl
         << "Be careful, that might mean that you go back double" << endl;
@@ -247,6 +247,10 @@ do{
     }
     else if (p1s == 2 ||p1s == 9 ||p1s == 12 ||p1s == 19 ||p1s == 22 ||p1s == 29 ||p1s == 32 ||p1s == 39 ||p1s == 42 ||p1s == 49 ){
         Item();
+        if (int dbl_nxt_spc > 0){
+            
+        }
+
     }
     else if (p1s == 3 ||p1s == 8 ||p1s == 13 ||p1s == 18 ||p1s == 23 ||p1s == 28 ||p1s == 33 ||p1s == 38 ||p1s == 43 ||p1s == 48){
         go_back();
