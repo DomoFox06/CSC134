@@ -16,7 +16,8 @@ void Charecter(string &p1a, string &p2a);
 void Name(string &p1n, string &p2n);
 void GamePlay(int &p1s, int &p2s, string p1a, string p1n, string p2a, string p2n);
 void GameStart();
-
+void Item();
+void Item2();
 
 // data
 //class Avatars{
@@ -56,6 +57,9 @@ int rollDice2() {
     return (rand() % 10 + 1);
 }
 int rollDice_Item() {
+    return (rand() % 4 + 1);
+}
+int rollDice_Chance() {
     return (rand() % 4 + 1);
 }
 int main(){
@@ -200,7 +204,7 @@ int Ri = rollDice_Item();
         cncl_go_bck++;
     }
     if (Ri == 3) {
-        cout << "Oof! Sorry " /*<< p2n <<*/ ". You have to go back 5 spaces" << endl;
+        cout << "Oof! Sorry "/* << p2n <<*/ ". You have to go back 5 spaces" << endl;
          p2s = p2s - 5;
     }
     if (Ri == 4) {
@@ -208,6 +212,35 @@ int Ri = rollDice_Item();
          p1s = p1s + 5;}
 
 }
+void Item2(int &p1s, int &p2s) {
+    
+    int dbl_nxt_spc, cncl_go_bck, opnt_go_back, go_frwd;
+    //int p1s;
+    //int p2s;/*
+    //int p1score = 0;
+    //int p2score = 0;
+    //p1score(p1s);
+    //p2score(p2s);*/
+    int Ri = rollDice_Item();
+        if (Ri == 1) {
+            cout << "Your next space is doubled!" << endl
+            << "Be careful, that might mean that you go back double" << endl;
+            dbl_nxt_spc++;
+        }
+        if (Ri == 2) {
+            cout << "This cancels out the next Go Back space!" << endl;
+            cncl_go_bck++;
+        }
+        if (Ri == 3) {
+            cout << "Oof! Sorry "/* << p2n <<*/ ". You have to go back 5 spaces" << endl;
+             p1s = p1s - 5;
+        }
+        if (Ri == 4) {
+            cout << "Yay! You move foward five spaces!" << endl;
+             p2s = p2s + 5;}
+    
+    }
+    
 void go_foward(){
 cout << "Go Forward!" << endl << "Go to the next space!" << endl;
 }
@@ -235,7 +268,8 @@ void Skip(){
     p2s = 0;
 
    int p1Skip = 0;
-    
+   int p2Skip = 0;
+       
 cout << endl << "Let's begin!" << endl << endl;
 do{
     do{
@@ -251,10 +285,10 @@ do{
         cout << die;
         p1s++;
     }
-    while (p1Skip > 0){
-        p1Skip--;
+    while (p2Skip > 0){
+        p2Skip--;
     }
-} while (p1Skip != 0);
+} while (p2Skip != 0);
 
 
    
@@ -273,6 +307,11 @@ do{
         do_nothing();
     }else if (p1s == 5 ||p1s == 15 ||p1s == 25 ||p1s == 35 ||p1s == 45){
         chance();
+       int RollI = rollDice_Chance();
+       if (RollI == 1){go_foward(); p1s++;}
+       else if (RollI == 2){go_back(); p1s--;}
+       else if (RollI == 3){do_nothing();}
+       else if (RollI == 4){Skip(); p1Skip++;}
     }
     else if (p1s == 10 ||p1s == 20 ||p1s == 30 ||p1s == 40 ||p1s == 50){
         Skip();
@@ -281,8 +320,7 @@ do{
     
     
     
-        int p2Skip = 0;
-       
+        
     do{
         do{
             cout << endl << p2n << "'s turn!" << endl << "Roll the die!" << endl;
@@ -295,10 +333,10 @@ do{
                cout << die;
                p2s++;
            }
-           while (p2Skip > 0){
-            p2Skip--;
+           while (p1Skip > 0){
+            p1Skip--;
            }
-    }while (p2Skip > 0);
+    }while (p1Skip > 0);
       
        
     if (p2s == 1 || p2s == 6 ||p2s == 11 ||p2s == 16 ||p2s == 21 ||p2s == 26 ||p2s == 31 ||p2s == 36 ||p2s == 41 ||p2s == 46){
@@ -306,7 +344,7 @@ do{
         p2s++;
     }
     else if (p2s == 2 ||p2s == 9 ||p2s == 12 ||p2s == 19 ||p2s == 22 ||p2s == 29 ||p2s == 32 ||p2s == 39 ||p2s == 42 ||p2s == 49 ){
-        Item(p1s, p2s);
+        Item2(p1s, p2s);
     }
     else if (p2s == 3 ||p2s == 8 ||p2s == 13 ||p2s == 18 ||p2s == 23 ||p2s == 28 ||p2s == 33 ||p2s == 38 ||p2s == 43 ||p2s == 48){
         go_back();
@@ -316,6 +354,11 @@ do{
         do_nothing();
     }else if (p2s == 5 ||p2s == 15 ||p2s == 25 ||p2s == 35 ||p2s == 45){
         chance();
+        int RollI = rollDice_Chance();
+       if (RollI == 1){go_foward(); p2s++;}
+       else if (RollI == 2){go_back(); p2s--;}
+       else if (RollI == 3){do_nothing();}
+       else if (RollI == 4){Skip(); p2Skip++;}
     }
     else if (p2s == 10 ||p2s == 20 ||p2s == 30 ||p2s == 40 ||p2s == 50){
         Skip();
@@ -326,6 +369,8 @@ do{
     int p2score = 0;
     p1score(p1s);
     p2score(p2s);*/
+
+
        cout << endl << p1n << "'s score: " << p1s << endl <<
        p2n << "'s score : " << p2s << endl;
 
