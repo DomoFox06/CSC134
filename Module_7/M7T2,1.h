@@ -2,6 +2,7 @@
 Domonic Yarnall
 CSC 134
 M7T2
+Gold
 4/30/25*/
 
 
@@ -41,26 +42,5 @@ double Rectangle::getArea()const{
     double area = width * length;
     return area;
 }
-int main(){
 
-    double wid, len, area;
-
-    cout << "Rectangles" << endl;
-    cout << "Rectangle 1" << endl;
-    do{
-    cout << "Enter Width: " ;
-    cin >> wid;
-    } while (wid <= 0);
-    do{
-    cout << "Enter Length: " ;
-    cin >> len;
-    }while (len <= 0);
-    Rectangle r1 = Rectangle();
-    r1.setWidth(wid);
-    r1.setLength(len);
-
-    cout << "The area is: "<< r1.getArea() << endl;
-
-    return 0;
-}
 #endif
