@@ -6,9 +6,9 @@ M7T2
 
 
 #include <iostream>
-#include "M7T2,1.h"
 using namespace std;
-
+#ifndef M7T2,1
+#define M7T2,1
 
 class Rectangle{
 private:
@@ -41,7 +41,6 @@ double Rectangle::getArea()const{
     double area = width * length;
     return area;
 }
-
 int main(){
 
     double wid, len, area;
@@ -64,3 +63,4 @@ int main(){
 
     return 0;
 }
+#endif
