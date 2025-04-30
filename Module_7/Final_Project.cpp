@@ -25,19 +25,17 @@ void GameStart();
 //int p1s;
 //int Ri;
 //public:
-void p1avatar(string &p1a){
-    
-}
+//void p1avatar(string &p1a){}
 /*void setName(string a1) {
     p1a = a1; 
 }*/
-void p1name(string &p1n){}
+//void p1name(string &p1n){}
 void p1score(int &p1s){}
 //p1I_dbl_spc(){}
-void p2avatar(string &p2a){
+//void p2avatar(string &p2a){}
 
-}
-void p2name(string &p2n){}
+
+//void p2name(string &p2n){}
 void p2score(int &p2s){}
 //p2I_dbl_spc(){}
 //};
@@ -124,7 +122,7 @@ if (p1a_C == 4){p1a = BR;}
 if (p1a_C == 5){p1a = BA;}
 if (p1a_C == 6){p1a = P;}
 
-cin.ignore();
+
 getline(cin, p1a);
 //avs.setName(p1a);
 
@@ -144,7 +142,7 @@ if (p2a_C == 4){p2a = BR;}
 if (p2a_C == 5){p2a = BA;}
 if (p2a_C == 6){p2a = P;}
 
-cin.ignore();
+
 getline(cin, p2a);
 
 cout << "Good choice!" << endl;
@@ -231,7 +229,7 @@ void Skip(){
     char R_C = 'r';
     int roll = rollDice();
     int roll2 = rollDice2();
-
+    
     p1s = 0;
     p2s = 0;
 
