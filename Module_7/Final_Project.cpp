@@ -64,13 +64,14 @@ int main(){
 
     int p1score = 0;
     int p2score = 0;
-    string p1name, p2name, p1avatar, p2avatar, p1a, p2a, p1n, p2n;
+    string p1name, p2name, p1avatar, p2avatar;
     
     Start(p1avatar, p2avatar, p1name, p2name, p1score, p2score);
-    Charecter(p1a, p2a);
-    Name(p1n, p2n);
+    Charecter(p1avatar, p2avatar);
+    Name(p1name, p2name);
 
     GameStart();
+    cout << "!!p1name = " << p1name << endl;
     GamePlay(p1score, p2score, p1avatar, p1name, p2avatar, p2name);
             
        
@@ -154,14 +155,14 @@ void Name(string &p1n, string &p2n){
    // string p1N;
     
     cout << "Player 1, please input your name: ";
-    cin.ignore();
+    //cin.ignore();
     getline(cin, p1n);
    
         
      cout << "Welcome " << p1n << "! That is a great name!" << endl;
     cout << endl << "Player 2, please input your name: ";
     
-    cin.ignore();
+    //cin.ignore();
     getline(cin, p2n);
     
     cout << "Welcome " << p2n << "! That is also a great name!" << endl;
@@ -222,7 +223,7 @@ cout << "Do Nothing!" << endl;
 void Skip(){
     cout << "Oof! Your next turn is skipped!" << endl;
 }
-
+    //GamePlay(p1score, p2score, p1avatar, p1name, p2avatar, p2name);
     void GamePlay(int &p1s, int &p2s, string p1a, string p1n, string p2a, string p2n){
     int total;
     char roll_choice;
@@ -233,7 +234,7 @@ void Skip(){
     p1s = 0;
     p2s = 0;
 
-   int p1Skip;
+   int p1Skip = 0;
     
 cout << endl << "Let's begin!" << endl << endl;
 do{
@@ -280,7 +281,7 @@ do{
     
     
     
-        int p2Skip;
+        int p2Skip = 0;
        
     do{
         do{
