@@ -371,8 +371,13 @@ do{
     p2score(p2s);*/
 
 
-       cout << endl << p1n << "'s score: " << p1s << endl <<
-       p2n << "'s score : " << p2s << endl;
+       cout << endl << p1n << "'s score: " << p1s << endl ;
+
+       if (p1s == 1){
+        cout << "🟢🟡🔴🔵⚪🟢🔵🔴🟡🟣🏁"
+       }
+
+       cout << p2n << "'s score : " << p2s << endl;
 
     } while (p1s < 50 && p2s < 50);
     
