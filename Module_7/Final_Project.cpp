@@ -1098,7 +1098,7 @@ do{
         cout <<
         "🟢🟡🔴🔵⚪🟢🔵🔴🟡🟣"<<endl<<
         "🟢🟡🔴🔵⚪🟢🔵🔴🟡🟣" <<endl<<
-        "🔴🔵⚪🟢🔵🔴🟡🟣"
+        "🔴🔵⚪🟢🔵🔴🟡🟣"<< endl
          << "🟢" << p2a <<
           "🔴🔵⚪🟢🔵🔴🟡🟣" << endl <<
         "🟢🟡🔴🔵⚪🟢🔵🔴🟡🟣🏁" << endl;
@@ -1277,6 +1277,6 @@ do{
       "🎊" << p1a << "🎊";
     }
     else if (p1s == p2s){
-      cout << "Oh! It's a tie! Congrats to you both!" << endl << "Play again to find out the true winner!"
+      cout << "Oh! It's a tie! Congrats to you both!" << endl << "Play again to find out the true winner!";
     }
 }
