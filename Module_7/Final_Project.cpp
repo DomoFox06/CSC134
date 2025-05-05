@@ -71,8 +71,9 @@ int main(){
     string p1name, p2name, p1avatar, p2avatar;
     
     Start(p1avatar, p2avatar, p1name, p2name, p1score, p2score);
-    Charecter(p1avatar, p2avatar);
+    
     Name(p1name, p2name);
+    Charecter(p1avatar, p2avatar);
     
 
     GameStart();
@@ -89,16 +90,14 @@ void Start(string &p1a, string &p2a, string &p1n, string &p2n, int &p1s, int &p2
 {
     cout << "Hello there! I am glad you chose to play this two player game!" << endl ;
     char s = 's';
-    char choice;
-    do{
-     cout << "Please input s to start the game and choose your avatar: " ;
-    cin >> choice;
-    } while (s != choice); 
-    if (s == s){
-        
-        
+    string choice;
+    //do{
+     cout << "Please input s to start the game and input your name: " ;
+     // AN - theory: using a char for input might have left \n on the cin queue, so it skips the next getline()?
+     getline(cin, choice);
+    //cin >> choice;
+    //} while (s != choice); 
 
-    }
 }
 void Charecter(string &p1a, string &p2a){
 cout << endl << "Time to choose your charecter!" << endl;
@@ -160,7 +159,7 @@ void Name(string &p1n, string &p2n){
    // string p1N;
     
     cout << "Player 1, please input your name: ";
-    //cin.ignore();
+    //cin.ignore(9999); // TESTING
     getline(cin, p1n);
    
         
@@ -199,14 +198,13 @@ srand(time(0));
 cout << endl << "You landed on an Item space. An itme will randomley be picked for you."
     << endl << "Your item's action is..." << endl;
     if (Ri == 1) {
-        cout << "Your next space is doubled!" << endl
-        << "Be careful, that might mean that you go back double" << endl;
-        dbl_nxt_spc++;
-    }
-    if (Ri == 2) {
-        cout << "This cancels out the next Go Back space!" << endl;
-        cncl_go_bck++;
-    }
+      cout << "Oof! Your oppent goes back to the begining" << endl;
+      p1s == 0;
+  }
+  if (Ri == 2) {
+      cout << "Oh no! Go back to the begining!" << endl;
+      p2s == 0;
+  }
     if (Ri == 3) {
         cout << "Oof! Sorry "/* << p2n <<*/ ". You have to go back 5 spaces" << endl;
          p2s = p2s - 5;
@@ -230,13 +228,12 @@ void Item2(int &p1s, int &p2s) {
     cout << endl << "You landed on an Item space. An itme will randomley be picked for you."
     << endl << "Your item's action is..." << endl;
         if (Ri == 1) {
-            cout << "Your next space is doubled!" << endl
-            << "Be careful, that might mean that you go back double" << endl;
-            dbl_nxt_spc++;
+            cout << "Oof! Your oppent goes back to the begining" << endl;
+            p2s == 0;
         }
         if (Ri == 2) {
-            cout << "This cancels out the next Go Back space!" << endl;
-            cncl_go_bck++;
+            cout << "Oh no! Go back to the begining!" << endl;
+            p1s == 0;
         }
         if (Ri == 3) {
             cout << "Oof! Sorry "/* << p2n <<*/ ". You have to go back 5 spaces" << endl;
@@ -277,7 +274,8 @@ void Skip(){
 
    int p1Skip = 0;
    int p2Skip = 0;
-       
+   // DEBUG
+   cout << "Player 1: " << p1n << " Player 2: " << p2n << endl;
 cout << endl << "Let's begin!" << endl << endl;
 do{
   int roll = rollDice();
@@ -296,6 +294,7 @@ do{
         cout << die;
         p1s++;
     }
+
     while (p2Skip > 0){
         p2Skip--;
     }
@@ -475,7 +474,7 @@ do{
        }
        else if (p1s == 12){
         cout <<
-        "🔴🔵⚪🟢🔵🔴🟡🟣" << endl
+        "🟢🟡🔴🔵⚪🟢🔵🔴🟡🟣" << endl
          << "🟢" << p1a <<
           "🔴🔵⚪🟢🔵🔴🟡🟣" << endl <<
         "🟢🟡🔴🔵⚪🟢🔵🔴🟡🟣" << endl <<
@@ -660,7 +659,7 @@ do{
         cout <<
         "🟢🟡🔴🔵⚪🟢🔵🔴🟡🟣"<<endl<<
         "🟢🟡🔴🔵⚪🟢🔵🔴🟡🟣" <<endl<<
-        "🔴🔵⚪🟢🔵🔴🟡🟣"
+        "🔴🔵⚪🟢🔵🔴🟡🟣" << endl
          << "🟢" << p1a <<
           "🔴🔵⚪🟢🔵🔴🟡🟣" << endl <<
         "🟢🟡🔴🔵⚪🟢🔵🔴🟡🟣🏁" << endl;
@@ -752,7 +751,7 @@ do{
         "🟢🟡🔴🔵⚪🟢🔵🔴🟡🟣"<<endl<<
         "🟢🟡🔴🔵⚪🟢🔵🔴🟡🟣" <<endl<<
         "🟢🟡🔴🔵⚪🟢🔵🔴🟡🟣" <<endl<<
-        "🔴🔵⚪🟢🔵🔴🟡🟣"
+        "🟢🟡🔴🔵⚪🟢🔵🔴🟡🟣"<< endl
          << "🟢" << p1a <<
           "🔴🔵⚪🟢🔵🔴🟡🟣" <<
         "🏁" << endl;
@@ -1197,7 +1196,7 @@ do{
         "🟢🟡🔴🔵⚪🟢🔵🔴🟡🟣"<<endl<<
         "🟢🟡🔴🔵⚪🟢🔵🔴🟡🟣" <<endl<<
         "🟢🟡🔴🔵⚪🟢🔵🔴🟡🟣" <<endl<<
-        "🔴🔵⚪🟢🔵🔴🟡🟣"
+        "🟢🟡🔴🔵⚪🟢🔵🔴🟡🟣" << endl
          << "🟢" << p2a <<
           "🔴🔵⚪🟢🔵🔴🟡🟣" <<
         "🏁" << endl;
