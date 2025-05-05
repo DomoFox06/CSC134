@@ -199,11 +199,11 @@ cout << endl << "You landed on an Item space. An itme will randomley be picked f
     << endl << "Your item's action is..." << endl;
     if (Ri == 1) {
       cout << "Oof! Your oppent goes back to the begining" << endl;
-      p1s == 0;
+      p1s = p1s - p1s;
   }
   if (Ri == 2) {
       cout << "Oh no! Go back to the begining!" << endl;
-      p2s == 0;
+      p2s = p2s - p2s;
   }
     if (Ri == 3) {
         cout << "Oof! Sorry "/* << p2n <<*/ ". You have to go back 5 spaces" << endl;
@@ -229,11 +229,11 @@ void Item2(int &p1s, int &p2s) {
     << endl << "Your item's action is..." << endl;
         if (Ri == 1) {
             cout << "Oof! Your oppent goes back to the begining" << endl;
-            p2s == 0;
+            p2s = p2s - p2s;
         }
         if (Ri == 2) {
             cout << "Oh no! Go back to the begining!" << endl;
-            p1s == 0;
+            p1s = p1s - p1s;
         }
         if (Ri == 3) {
             cout << "Oof! Sorry "/* << p2n <<*/ ". You have to go back 5 spaces" << endl;
