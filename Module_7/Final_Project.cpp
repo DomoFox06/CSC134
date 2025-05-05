@@ -195,6 +195,7 @@ int dbl_nxt_spc, cncl_go_bck, opnt_go_back, go_frwd;
 //p1score(p1s);
 //p2score(p2s);*/
 int Ri = rollDice_Item();
+srand(time(0));
 cout << endl << "You landed on an Item space. An itme will randomley be picked for you."
     << endl << "Your item's action is..." << endl;
     if (Ri == 1) {
@@ -225,6 +226,7 @@ void Item2(int &p1s, int &p2s) {
     //p1score(p1s);
     //p2score(p2s);*/
     int Ri = rollDice_Item();
+    srand(time(0));
     cout << endl << "You landed on an Item space. An itme will randomley be picked for you."
     << endl << "Your item's action is..." << endl;
         if (Ri == 1) {
@@ -263,6 +265,7 @@ void Skip(){
 }
     //GamePlay(p1score, p2score, p1avatar, p1name, p2avatar, p2name);
     void GamePlay(int &p1s, int &p2s, string p1a, string p1n, string p2a, string p2n){
+      srand(time(0));
     int total;
     char roll_choice;
     char R_C = 'r';
@@ -277,8 +280,11 @@ void Skip(){
        
 cout << endl << "Let's begin!" << endl << endl;
 do{
+  int roll = rollDice();
     do{
          do{
+          
+    
      cout << p1n << "'s turn!" << endl << "Roll the die!" << endl;
     cout << "Push r to roll " ;
     cin >> roll_choice;
@@ -327,6 +333,7 @@ do{
     
         
     do{
+      int roll2 = rollDice2();
         do{
             cout << endl << p2n << "'s turn!" << endl << "Roll the die!" << endl;
            cout << "Push r to roll " ;
