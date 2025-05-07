@@ -427,11 +427,6 @@ do{
              string die = "🎲";
              cout << die;
              p2s++;
-         }
-         while (p1Skip > 0){
-          p1Skip--;
-         }
-  
     
      
   if (p2s == 1 || p2s == 6 ||p2s == 11 ||p2s == 16 ||p2s == 21 ||p2s == 26 ||p2s == 31 ||p2s == 36 ||p2s == 41 ||p2s == 46){
