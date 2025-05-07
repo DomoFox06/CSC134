@@ -199,11 +199,11 @@ cout << endl << "You landed on an Item space. An itme will randomley be picked f
     << endl << "Your item's action is..." << endl;
     if (Ri == 1) {
       cout << "Oof! Your oppent goes back to the begining" << endl;
-      p1s = p1s - p1s;
+      p1s == 0;
   }
   if (Ri == 2) {
       cout << "Oh no! Go back to the begining!" << endl;
-      p2s = p2s - p2s;
+      p2s == 0;
   }
     if (Ri == 3) {
         cout << "Oof! Sorry "/* << p2n <<*/ ". You have to go back 5 spaces" << endl;
@@ -233,7 +233,7 @@ void Item2(int &p1s, int &p2s) {
         }
         if (Ri == 2) {
             cout << "Oh no! Go back to the begining!" << endl;
-            p1s = p1s - p1s;
+            p1s == 0;
         }
         if (Ri == 3) {
             cout << "Oof! Sorry "/* << p2n <<*/ ". You have to go back 5 spaces" << endl;
@@ -427,6 +427,7 @@ do{
              string die = "🎲";
              cout << die;
              p2s++;
+         }
     
      
   if (p2s == 1 || p2s == 6 ||p2s == 11 ||p2s == 16 ||p2s == 21 ||p2s == 26 ||p2s == 31 ||p2s == 36 ||p2s == 41 ||p2s == 46){
@@ -502,7 +503,7 @@ do{
        }
        else if (p1s == 5){
         cout << "🟢🟡🔴🔵" << p1a <<
-          "🔵🔴🟡🟣" << endl <<
+          "🟢🔵🔴🟡🟣" << endl <<
         "🟢🟡🔴🔵⚪🟢🔵🔴🟡🟣" << endl <<
         "🟢🟡🔴🔵⚪🟢🔵🔴🟡🟣" << endl <<
         "🟢🟡🔴🔵⚪🟢🔵🔴🟡🟣" << endl <<
@@ -947,7 +948,7 @@ do{
        }
        else if (p2s == 5){
         cout << "🟢🟡🔴🔵" << p2a <<
-          "🔵🔴🟡🟣" << endl <<
+          "🟢🔵🔴🟡🟣" << endl <<
         "🟢🟡🔴🔵⚪🟢🔵🔴🟡🟣" << endl <<
         "🟢🟡🔴🔵⚪🟢🔵🔴🟡🟣" << endl <<
         "🟢🟡🔴🔵⚪🟢🔵🔴🟡🟣" << endl <<
