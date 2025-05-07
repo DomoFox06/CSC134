@@ -229,7 +229,7 @@ void Item2(int &p1s, int &p2s) {
     << endl << "Your item's action is..." << endl;
         if (Ri == 1) {
             cout << "Oof! Your oppent goes back to the begining" << endl;
-            p2s = p2s - p2s;
+            p2s == 0;
         }
         if (Ri == 2) {
             cout << "Oh no! Go back to the begining!" << endl;
@@ -279,7 +279,6 @@ void Skip(){
 cout << endl << "Let's begin!" << endl << endl;
 do{
   int roll = rollDice();
-    do{
          do{
           
     
@@ -295,11 +294,49 @@ do{
         p1s++;
     }
 
-    while (p2Skip > 0){
-        p2Skip--;
+   
+    if (p1s == 1 || p1s == 6 ||p1s == 11 ||p1s == 16 ||p1s == 21 ||p1s == 26 ||p1s == 31 ||p1s == 36 ||p1s == 41 ||p1s == 46){
+        go_foward();
+        p1s++;
     }
-} while (p2Skip != 0);
+    else if (p1s == 2 ||p1s == 9 ||p1s == 12 ||p1s == 19 ||p1s == 22 ||p1s == 29 ||p1s == 32 ||p1s == 39 ||p1s == 42 ||p1s == 49 ){
+        Item(p1s, p2s);
+              }
+    else if (p1s == 3 ||p1s == 8 ||p1s == 13 ||p1s == 18 ||p1s == 23 ||p1s == 28 ||p1s == 33 ||p1s == 38 ||p1s == 43 ||p1s == 48){
+        go_back();
+        p1s--;
+    }
+    else if (p1s == 4 ||p1s == 7 ||p1s == 14 ||p1s == 17 ||p1s == 24 ||p1s == 27 ||p1s == 34 ||p1s == 37 ||p1s == 44 ||p1s == 47 ){
+        do_nothing();
+    }else if (p1s == 5 ||p1s == 15 ||p1s == 25 ||p1s == 35 ||p1s == 45){
+        chance();
+       int RollI = rollDice_Chance();
+       if (RollI == 1){go_foward(); p1s++;}
+       else if (RollI == 2){go_back(); p1s--;}
+       else if (RollI == 3){do_nothing();}
+       else if (RollI == 4){Skip(); p1Skip++;}
+    }
+    else if (p1s == 10 ||p1s == 20 ||p1s == 30 ||p1s == 40 ||p1s == 50){
+        Skip();
+        p1Skip++;
+    }
 
+    if (p2Skip != 0){
+  int roll = rollDice();
+         do{
+          
+    
+     cout << p1n << "'s turn!" << endl << "Roll the die!" << endl;
+    cout << "Push r to roll " ;
+    cin >> roll_choice;
+    } while (roll_choice != R_C);
+    cout << "Your roll is: " << roll << "!" ;
+   
+    for (int i =0; i < roll; i++){
+        string die = "🎲";
+        cout << die;
+        p1s++;
+    }
 
    
     if (p1s == 1 || p1s == 6 ||p1s == 11 ||p1s == 16 ||p1s == 21 ||p1s == 26 ||p1s == 31 ||p1s == 36 ||p1s == 41 ||p1s == 46){
@@ -328,6 +365,8 @@ do{
         p1Skip++;
     }
     
+      p2Skip--;
+    }
     
     
         
@@ -375,6 +414,56 @@ do{
         Skip();
         p2Skip++;
     }
+
+    if (p1Skip != 0){
+      int roll2 = rollDice2();
+      do{
+          cout << endl << p2n << "'s turn!" << endl << "Roll the die!" << endl;
+         cout << "Push r to roll " ;
+         cin >> roll_choice;
+         } while (roll_choice != R_C);
+         cout << "Your roll is: " << roll2 << "!" ;
+         for (int i =0; i < roll2; i++){
+             string die = "🎲";
+             cout << die;
+             p2s++;
+         }
+         while (p1Skip > 0){
+          p1Skip--;
+         }
+  
+    
+     
+  if (p2s == 1 || p2s == 6 ||p2s == 11 ||p2s == 16 ||p2s == 21 ||p2s == 26 ||p2s == 31 ||p2s == 36 ||p2s == 41 ||p2s == 46){
+      go_foward();
+      p2s++;
+  }
+  else if (p2s == 2 ||p2s == 9 ||p2s == 12 ||p2s == 19 ||p2s == 22 ||p2s == 29 ||p2s == 32 ||p2s == 39 ||p2s == 42 ||p2s == 49 ){
+      Item2(p1s, p2s);
+  }
+  else if (p2s == 3 ||p2s == 8 ||p2s == 13 ||p2s == 18 ||p2s == 23 ||p2s == 28 ||p2s == 33 ||p2s == 38 ||p2s == 43 ||p2s == 48){
+      go_back();
+      p2s--;
+  }
+  else if (p2s == 4 ||p2s == 7 ||p2s == 14 ||p2s == 17 ||p2s == 24 ||p2s == 27 ||p2s == 34 ||p2s == 37 ||p2s == 44 ||p2s == 47 ){
+      do_nothing();
+  }else if (p2s == 5 ||p2s == 15 ||p2s == 25 ||p2s == 35 ||p2s == 45){
+      chance();
+      int RollI = rollDice_Chance();
+     if (RollI == 1){go_foward(); p2s++;}
+     else if (RollI == 2){go_back(); p2s--;}
+     else if (RollI == 3){do_nothing();}
+     else if (RollI == 4){Skip(); p2Skip++;}
+  }
+  else if (p2s == 10 ||p2s == 20 ||p2s == 30 ||p2s == 40 ||p2s == 50){
+      Skip();
+      p2Skip++;
+  }
+    p1Skip--;
+    }
+  
+
+  
     /*
     int p1score = 0;
     int p2score = 0;
