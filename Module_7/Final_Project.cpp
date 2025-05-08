@@ -197,21 +197,6 @@ int Ri = rollDice_Item();
 srand(time(0));
 cout << endl << "You landed on an Item space. An itme will randomley be picked for you."
     << endl << "Your item's action is..." << endl;
-    if (Ri == 1) {
-      cout << "Oof! Your oppent goes back to the begining" << endl;
-      p1s == 0;
-  }
-  if (Ri == 2) {
-      cout << "Oh no! Go back to the begining!" << endl;
-      p2s == 0;
-  }
-    if (Ri == 3) {
-        cout << "Oof! Sorry "/* << p2n <<*/ ". You have to go back 5 spaces" << endl;
-         p2s = p2s - 5;
-    }
-    if (Ri == 4) {
-        cout << "Yay! You move foward five spaces!" << endl;
-         p1s = p1s + 5;}
 
 }
 void Item2(int &p1s, int &p2s) {
@@ -223,26 +208,10 @@ void Item2(int &p1s, int &p2s) {
     //int p2score = 0;
     //p1score(p1s);
     //p2score(p2s);*/
-    int Ri = rollDice_Item();
-    srand(time(0));
+    
     cout << endl << "You landed on an Item space. An itme will randomley be picked for you."
     << endl << "Your item's action is..." << endl;
-        if (Ri == 1) {
-            cout << "Oof! Your oppent goes back to the begining" << endl;
-            p2s == 0;
-        }
-        if (Ri == 2) {
-            cout << "Oh no! Go back to the begining!" << endl;
-            p1s == 0;
-        }
-        if (Ri == 3) {
-            cout << "Oof! Sorry "/* << p2n <<*/ ". You have to go back 5 spaces" << endl;
-             p1s = p1s - 5;
-        }
-        if (Ri == 4) {
-            cout << "Yay! You move foward five spaces!" << endl;
-             p2s = p2s + 5;}
-    
+        
     }
     
 void go_foward(){
@@ -301,6 +270,26 @@ do{
     }
     else if (p1s == 2 ||p1s == 9 ||p1s == 12 ||p1s == 19 ||p1s == 22 ||p1s == 29 ||p1s == 32 ||p1s == 39 ||p1s == 42 ||p1s == 49 ){
         Item(p1s, p2s);
+    
+        int Ri = rollDice_Item();
+    srand(time(0));
+
+        if (Ri == 1) {
+            cout << "Oof! Your oppent goes back to the begining" << endl;
+            p2s = p2s - p2s;
+        }
+        if (Ri == 2) {
+            cout << "Oh no! Go back to the begining!" << endl;
+            p1s = p1s - p1s;
+        }
+        if (Ri == 3) {
+            cout << "Oof! Sorry "/* << p2n <<*/ ". You have to go back 5 spaces" << endl;
+             p1s = p1s - 5;
+        }
+        if (Ri == 4) {
+            cout << "Yay! You move foward five spaces!" << endl;
+             p1s = p1s + 5;}
+
               }
     else if (p1s == 3 ||p1s == 8 ||p1s == 13 ||p1s == 18 ||p1s == 23 ||p1s == 28 ||p1s == 33 ||p1s == 38 ||p1s == 43 ||p1s == 48){
         go_back();
@@ -345,6 +334,27 @@ do{
     }
     else if (p1s == 2 ||p1s == 9 ||p1s == 12 ||p1s == 19 ||p1s == 22 ||p1s == 29 ||p1s == 32 ||p1s == 39 ||p1s == 42 ||p1s == 49 ){
         Item(p1s, p2s);
+        
+        
+        int Ri = rollDice_Item();
+    srand(time(0));
+
+        if (Ri == 1) {
+            cout << "Oof! Your oppent goes back to the begining" << endl;
+            p2s = p2s - p2s;
+        }
+        if (Ri == 2) {
+            cout << "Oh no! Go back to the begining!" << endl;
+            p1s = p1s - p1s;
+        }
+        if (Ri == 3) {
+            cout << "Oof! Sorry "/* << p2n <<*/ ". You have to go back 5 spaces" << endl;
+             p1s = p1s - 5;
+        }
+        if (Ri == 4) {
+            cout << "Yay! You move foward five spaces!" << endl;
+             p1s = p1s + 5;}
+
               }
     else if (p1s == 3 ||p1s == 8 ||p1s == 13 ||p1s == 18 ||p1s == 23 ||p1s == 28 ||p1s == 33 ||p1s == 38 ||p1s == 43 ||p1s == 48){
         go_back();
@@ -393,6 +403,26 @@ do{
     }
     else if (p2s == 2 ||p2s == 9 ||p2s == 12 ||p2s == 19 ||p2s == 22 ||p2s == 29 ||p2s == 32 ||p2s == 39 ||p2s == 42 ||p2s == 49 ){
         Item2(p1s, p2s);
+        
+        int Ri = rollDice_Item();
+    srand(time(0));
+
+        if (Ri == 1) {
+            cout << "Oof! Your oppent goes back to the begining" << endl;
+            p1s = p1s - p1s;
+        }
+        if (Ri == 2) {
+            cout << "Oh no! Go back to the begining!" << endl;
+            p2s = p2s - p2s;
+        }
+        if (Ri == 3) {
+            cout << "Oof! Sorry "/* << p2n <<*/ ". You have to go back 5 spaces" << endl;
+             p2s = p2s - 5;
+        }
+        if (Ri == 4) {
+            cout << "Yay! You move foward five spaces!" << endl;
+             p2s = p2s + 5;}
+
     }
     else if (p2s == 3 ||p2s == 8 ||p2s == 13 ||p2s == 18 ||p2s == 23 ||p2s == 28 ||p2s == 33 ||p2s == 38 ||p2s == 43 ||p2s == 48){
         go_back();
@@ -434,6 +464,26 @@ do{
   }
   else if (p2s == 2 ||p2s == 9 ||p2s == 12 ||p2s == 19 ||p2s == 22 ||p2s == 29 ||p2s == 32 ||p2s == 39 ||p2s == 42 ||p2s == 49 ){
       Item2(p1s, p2s);
+      
+        int Ri = rollDice_Item();
+    srand(time(0));
+
+        if (Ri == 1) {
+            cout << "Oof! Your oppent goes back to the begining" << endl;
+            p1s = p1s - p1s;
+        }
+        if (Ri == 2) {
+            cout << "Oh no! Go back to the begining!" << endl;
+            p2s = p2s - p2s;
+        }
+        if (Ri == 3) {
+            cout << "Oof! Sorry "/* << p2n <<*/ ". You have to go back 5 spaces" << endl;
+             p2s = p2s - 5;
+        }
+        if (Ri == 4) {
+            cout << "Yay! You move foward five spaces!" << endl;
+             p2s = p2s + 5;}
+
   }
   else if (p2s == 3 ||p2s == 8 ||p2s == 13 ||p2s == 18 ||p2s == 23 ||p2s == 28 ||p2s == 33 ||p2s == 38 ||p2s == 43 ||p2s == 48){
       go_back();
